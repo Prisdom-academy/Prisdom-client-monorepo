@@ -1,0 +1,5 @@
+{
+    "name": "prisdom-mono-repo",
+    "private": true,
+    "workspaces": ["packages/*"]
+}

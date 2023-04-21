@@ -1,0 +1,103 @@
+/* width */
+#notification-list::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+#notification-list::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0);
+}
+
+/* Handle */
+#notification-list::-webkit-scrollbar-thumb {
+  border-radius: 400px;
+  background: rgba(99, 115, 129, 0.5);
+}
+
+/* Handle on hover */
+#notification-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 115, 129, 0.9);
+}
+
+/* width */
+#profile-panel::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+#profile-panel::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0);
+}
+
+/* Handle */
+#profile-panel::-webkit-scrollbar-thumb {
+  border-radius: 400px;
+  background: rgba(99, 115, 129, 0.5);
+}
+
+/* Handle on hover */
+#profile-panel::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 115, 129, 0.9);
+}
+
+/* width */
+#nav-main-content::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+#nav-main-content::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0);
+}
+
+/* Handle */
+#nav-main-content::-webkit-scrollbar-thumb {
+  border-radius: 400px;
+  background: rgba(99, 115, 129, 0.5);
+}
+
+/* Handle on hover */
+#nav-main-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 115, 129, 0.9);
+}
+
+#nav-main-content::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+#nav-main-content::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0);
+}
+
+/* Handle */
+#nav-main-content::-webkit-scrollbar-thumb {
+  border-radius: 400px;
+  background: rgba(99, 115, 129, 0.5);
+}
+
+/* Handle on hover */
+#nav-main-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 115, 129, 0.9);
+}
+
+/* =============== */
+#rightBar-rank-list-box::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+#rightBar-rank-list-box::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0);
+}
+
+/* Handle */
+#rightBar-rank-list-box::-webkit-scrollbar-thumb {
+  border-radius: 400px;
+  background: rgba(99, 115, 129, 0.5);
+}
+
+/* Handle on hover */
+#rightBar-rank-list-box::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 115, 129, 0.9);
+}
