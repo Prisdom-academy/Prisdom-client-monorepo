@@ -1,13 +1,13 @@
 import { Box, Center, Flex, Image, Text } from '@chakra-ui/react';
-import Dot from 'component-ui/Badges/Dot';
-import PrisButton from 'component-ui/buttons/PrisButton';
-import { TypoToken } from 'theme/base/interfaces';
-import { ExtendedColor } from 'theme/colors/interfaces';
-import { ArticleIconOutlined } from 'theme/icons/SVGs/article';
-import CloseIcon from 'theme/icons/SVGs/close';
-import { CourseIconOutlined } from 'theme/icons/SVGs/course';
-import { UserIconOutlined } from 'theme/icons/SVGs/user';
-import { TextLayer } from 'theme/typography/interfaces';
+import Dot from '@prisdom/component-ui/src/Badges/Dot';
+import PrisButton from '@prisdom/component-ui/src/buttons/PrisButton';
+import { TypoToken } from '@prisdom/theme/base/interfaces';
+import { ExtendedColor } from '@prisdom/theme/colors/interfaces';
+import { ArticleIconOutlined } from '@prisdom/theme/icons/SVGs/article';
+import CloseIcon from '@prisdom/theme/icons/SVGs/close';
+import { CourseIconOutlined } from '@prisdom/theme/icons/SVGs/course';
+import { UserIconOutlined } from '@prisdom/theme/icons/SVGs/user';
+import { TextLayer } from '@prisdom/theme/typography/interfaces';
 import { styles } from '../styles';
 
 export enum SearchItemType {

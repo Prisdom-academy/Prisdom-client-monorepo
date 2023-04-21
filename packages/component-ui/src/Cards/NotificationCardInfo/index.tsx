@@ -10,20 +10,20 @@ import {
   MenuDivider,
   MenuItem,
   MenuList,
-  Text
-} from '@chakra-ui/react';
-import PrisButton from 'component-ui/buttons/PrisButton';
-import { NotificationTemplate } from 'models/notification';
-import { useState } from 'react';
-import { TypoToken } from 'theme/base/interfaces';
-import { ExtendedColor } from 'theme/colors/interfaces';
-import { MoreIcon } from 'theme/icons/SVGs/more';
-import { TextLayer } from 'theme/typography/interfaces';
-import { getOriginalStringFromTemplate } from 'utils/notificationUtils';
-import { styles } from './styles';
-import './additional.css';
-import CheckIcon from 'theme/icons/SVGs/check';
-import { TrashIconOutlined } from 'theme/icons/SVGs/trash';
+  Text,
+} from "@chakra-ui/react";
+import PrisButton from "../../buttons/PrisButton";
+import { NotificationTemplate } from "models/notification";
+import { useState } from "react";
+import { TypoToken } from "@prisdom/theme/base/interfaces";
+import { ExtendedColor } from "@prisdom/theme/colors/interfaces";
+import { MoreIcon } from "@prisdom/theme/icons/SVGs/more";
+import { TextLayer } from "@prisdom/theme/typography/interfaces";
+import { getOriginalStringFromTemplate } from "utils/notificationUtils";
+import { styles } from "./styles";
+import "./additional.css";
+import CheckIcon from "@prisdom/theme/icons/SVGs/check";
+import { TrashIconOutlined } from "@prisdom/theme/icons/SVGs/trash";
 
 interface INotificationCardInfoProps extends FlexProps {
   id: string;
@@ -33,7 +33,7 @@ interface INotificationCardInfoProps extends FlexProps {
   onApprove?: () => void;
   onDecline?: () => void;
   isShowActionButton?: boolean;
-  notificationState: 'read' | 'unread';
+  notificationState: "read" | "unread";
 }
 
 const NotificationCardInfo = (props: INotificationCardInfoProps) => {
@@ -51,17 +51,17 @@ const NotificationCardInfo = (props: INotificationCardInfoProps) => {
   const { originalStr, highlightKeyword } =
     getOriginalStringFromTemplate(notificationTitle);
   const [isMouseEnter, setIsMouseEnter] = useState(false);
-  const isNotificationUnread = notificationState === 'unread';
+  const isNotificationUnread = notificationState === "unread";
 
   function _renderBlueDot() {
     return (
       <Center>
         <Box
-          boxSize={'1.15rem'}
-          bgColor={ExtendedColor['primary_dark.500']}
+          boxSize={"1.15rem"}
+          bgColor={ExtendedColor["primary_dark.500"]}
           borderRadius="50%"
           border="2px solid"
-          borderColor={ExtendedColor['darkLevel.800']}
+          borderColor={ExtendedColor["darkLevel.800"]}
         ></Box>
       </Center>
     );
@@ -88,15 +88,15 @@ const NotificationCardInfo = (props: INotificationCardInfoProps) => {
           variant="tertiary"
           sx={styles.moreActionButton}
         >
-          <MoreIcon fill="inherit" boxSize={'1.25rem'} />
+          <MoreIcon fill="inherit" boxSize={"1.25rem"} />
         </MenuButton>
         <MenuList
           minWidth="16rem"
-          transform={'translate(13px, 3px) !important'}
+          transform={"translate(13px, 3px) !important"}
         >
           <MenuItem
             layerStyle={TextLayer.smallBoldNormal}
-            icon={<CheckIcon fill={'inherit'} boxSize="1.25rem" />}
+            icon={<CheckIcon fill={"inherit"} boxSize="1.25rem" />}
           >
             Mark as read
           </MenuItem>
@@ -104,9 +104,7 @@ const NotificationCardInfo = (props: INotificationCardInfoProps) => {
           <MenuItem
             sx={styles.trashMenuItem}
             layerStyle={TextLayer.smallBoldNormal}
-            icon={
-              <TrashIconOutlined fill={'inherit'} boxSize="1.25rem" />
-            }
+            icon={<TrashIconOutlined fill={"inherit"} boxSize="1.25rem" />}
           >
             Remove this notification
           </MenuItem>
@@ -130,24 +128,21 @@ const NotificationCardInfo = (props: INotificationCardInfoProps) => {
       <Box
         sx={styles.root}
         {...rest}
-        data-testid={'Notification_card_' + id}
+        data-testid={"Notification_card_" + id}
         cursor="pointer"
-        position={'relative'}
+        position={"relative"}
         onMouseEnter={() => setIsMouseEnter(true)}
         onMouseLeave={() => setIsMouseEnter(false)}
       >
-        <Flex pos={'relative'}>
+        <Flex pos={"relative"}>
           <Avatar src={src} name={avatarName} />
           <Box ml="1.25rem">
-            <Text
-              layerStyle={TextLayer.baseRegularNormal}
-              color={textColor}
-            >
+            <Text layerStyle={TextLayer.baseRegularNormal} color={textColor}>
               <Highlight
                 query={highlightKeyword}
                 styles={{
                   fontWeight: 700,
-                  color: textColor
+                  color: textColor,
                 }}
               >
                 {originalStr}

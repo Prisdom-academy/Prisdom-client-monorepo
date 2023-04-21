@@ -1,10 +1,8 @@
 import { defineStyle } from '@chakra-ui/react';
-import { NavTokenColor } from 'theme/base/aliasTokens/interfaces';
+import { NavTokenColor } from '@prisdom/theme/base/aliasTokens/interfaces';
 import {
-  ColorToken,
-  ShadowToken,
   TypoToken
-} from 'theme/base/interfaces';
+} from '@prisdom/theme/base/interfaces';
 
 export const styles = defineStyle({
   root: {
@@ -25,20 +23,6 @@ export const styles = defineStyle({
         h2: {
           color: TypoToken.type_link_focus
         }
-        /*
-        _after: {
-          content: '""',
-          height: '96%',
-          w: '96%',
-          position: 'absolute',
-          top: '.78rem',
-          left: 0,
-          backgroundColor: ColorToken.fake_shadow_background_info,
-          zIndex: '-1',
-          boxShadow: ShadowToken.shadow_color_infor,
-          borderRadius: '.7rem'
-        }
-        */
       }
     }
   }

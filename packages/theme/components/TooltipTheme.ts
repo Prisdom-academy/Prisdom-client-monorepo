@@ -1,6 +1,6 @@
 import { ComponentStyleConfig } from '@chakra-ui/react';
-import { ExtendedColor } from 'theme/colors/interfaces';
-import { TextLayer } from 'theme/typography/interfaces';
+import { ExtendedColor } from '../colors/interfaces';
+import { TextLayer } from '../typography/interfaces';
 
 export const TooltipTheme: ComponentStyleConfig = {
   baseStyle: (props) => ({

@@ -1,6 +1,6 @@
 import { defineStyle, defineStyleConfig } from '@chakra-ui/react';
-import { ColorToken } from 'theme/base/interfaces';
-import { ExtendedColor } from 'theme/colors/interfaces';
+import { ColorToken } from '../base/interfaces';
+import { ExtendedColor } from '../colors/interfaces';
 
 const decor = defineStyle({
   borderWidth: '6px',

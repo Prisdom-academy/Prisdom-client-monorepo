@@ -1,6 +1,6 @@
 import { defineStyle } from '@chakra-ui/react';
-import { ChipToken } from 'theme/base/interfaces';
-import { ExtendedColor } from 'theme/colors/interfaces';
+import { ChipToken } from '@prisdom/theme/base/interfaces';
+import { ExtendedColor } from '@prisdom/theme/colors/interfaces';
 
 interface IStyleParams {
   variant: 'base' | 'no-border';

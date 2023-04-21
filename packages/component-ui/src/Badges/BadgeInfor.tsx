@@ -1,24 +1,24 @@
-import { Flex, FlexProps, Text } from '@chakra-ui/react';
-import { ExtendedColor } from 'theme/colors/interfaces';
-import { TextLayer } from 'theme/typography/interfaces';
+import { Flex, FlexProps, Text } from "@chakra-ui/react";
+import { ExtendedColor } from "@prisdom/theme/colors/interfaces";
+import { TextLayer } from "@prisdom/theme/typography/interfaces";
 
 interface BadgeInfoProps extends FlexProps {
   bgColor?: string;
   color?: string;
-  badgeType?: 'round' | 'no-round';
+  badgeType?: "round" | "no-round";
   className?: string;
 }
 
 const BadgeInfo = (props: BadgeInfoProps) => {
   const {
     children,
-    bgColor = ExtendedColor['darkLevel.300'],
-    color = ExtendedColor['darkLevel.900'],
-    badgeType = 'no-round',
+    bgColor = ExtendedColor["darkLevel.300"],
+    color = ExtendedColor["darkLevel.900"],
+    badgeType = "no-round",
     ...rest
   } = props;
 
-  const borderRadius = badgeType === 'no-round' ? '.3rem' : '10rem';
+  const borderRadius = badgeType === "no-round" ? ".3rem" : "10rem";
 
   return (
     <Flex

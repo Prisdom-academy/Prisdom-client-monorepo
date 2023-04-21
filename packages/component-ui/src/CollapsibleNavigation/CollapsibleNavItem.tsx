@@ -1,9 +1,9 @@
-import { Box, Button, ButtonProps, Text } from '@chakra-ui/react';
-import { uniqueId } from 'lodash';
-import { CollapsibleNavToken } from 'theme/base/interfaces';
-import { TextLayer } from 'theme/typography/interfaces';
-import { styleGen } from './styles';
-import { Link } from 'react-router-dom';
+import { Box, Button, ButtonProps, Text } from "@chakra-ui/react";
+import { uniqueId } from "lodash";
+import { CollapsibleNavToken } from "@prisdom/theme/base/interfaces";
+import { TextLayer } from "@prisdom/theme/typography/interfaces";
+import { styleGen } from "./styles";
+import { Link } from "react-router-dom";
 
 interface ICollapsibleNavItemProps extends ButtonProps {
   onNavSelect?(id: string): void;
@@ -25,12 +25,7 @@ const CollapsibleNavItem = (props: ICollapsibleNavItemProps) => {
 
   function _renderDot(radius: string, color: string) {
     return (
-      <Box
-        boxSize={radius}
-        mr="1.7rem"
-        borderRadius="50"
-        bgColor={color}
-      />
+      <Box boxSize={radius} mr="1.7rem" borderRadius="50" bgColor={color} />
     );
   }
 
@@ -41,20 +36,12 @@ const CollapsibleNavItem = (props: ICollapsibleNavItemProps) => {
   return (
     <Button {...rest} sx={styles.item} onClick={_onNavSelect}>
       {!isActive
-        ? _renderDot(
-            '.25rem',
-            CollapsibleNavToken.cpn_nav_ver_content_inactive
-          )
-        : _renderDot(
-            '.5rem',
-            CollapsibleNavToken.cpn_nav_ver_content_active
-          )}
-      <Link to={linkHref || '/'} style={{ width: '100%' }}>
+        ? _renderDot(".25rem", CollapsibleNavToken.cpn_nav_ver_content_inactive)
+        : _renderDot(".5rem", CollapsibleNavToken.cpn_nav_ver_content_active)}
+      <Link to={linkHref || "/"} style={{ width: "100%" }}>
         <Text
           layerStyle={
-            isActive
-              ? TextLayer.baseBoldNormal
-              : TextLayer.baseRegularNormal
+            isActive ? TextLayer.baseBoldNormal : TextLayer.baseRegularNormal
           }
           color={
             isActive

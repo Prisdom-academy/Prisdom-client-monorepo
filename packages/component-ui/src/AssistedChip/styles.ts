@@ -1,6 +1,6 @@
 import { defineStyle } from '@chakra-ui/react';
 import { merge } from 'lodash';
-import { ChipToken } from 'theme/base/interfaces';
+import { ChipToken } from '@prisdom/theme/base/interfaces';
 
 export type ChipVariant = 'default' | 'elevator';
 export const stylesGenerator = (variant: ChipVariant) => {

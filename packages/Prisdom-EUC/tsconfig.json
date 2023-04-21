@@ -18,7 +18,11 @@
     "experimentalDecorators": true,
     "types": ["reflect-metadata", "node"],
     "emitDecoratorMetadata": true,
-    "baseUrl": "src"
+    "baseUrl": "src",
+    "paths": {
+			"@prisdom/theme/*": ["../theme/*"],
+			"@prisdom/component-ui/*": ["../component-ui/*"],
+		},
   },
   "include": ["src"]
 }

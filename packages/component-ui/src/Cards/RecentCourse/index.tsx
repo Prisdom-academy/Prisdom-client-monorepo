@@ -1,9 +1,9 @@
-import { Box, chakra, Flex, Image, Text } from '@chakra-ui/react';
-import Dot from 'component-ui/Badges/Dot';
-import { truncate } from 'lodash';
-import { TypoToken } from 'theme/base/interfaces';
-import { ExtendedColor } from 'theme/colors/interfaces';
-import { TextLayer } from 'theme/typography/interfaces';
+import { Box, chakra, Flex, Image, Text } from "@chakra-ui/react";
+import Dot from "../../Badges/Dot";
+import { truncate } from "lodash";
+import { TypoToken } from "@prisdom/theme/base/interfaces";
+import { ExtendedColor } from "@prisdom/theme/colors/interfaces";
+import { TextLayer } from "@prisdom/theme/typography/interfaces";
 
 export interface ICourseCardProps {
   imgUrl: string;
@@ -24,7 +24,7 @@ const RecentCourse = (props: ICourseCardProps) => {
       <Image
         src={imgUrl}
         boxSize="5.375rem"
-        borderLeftRadius={'.5rem'}
+        borderLeftRadius={".5rem"}
         objectFit="cover"
       />
       <Box id="recent-course-information" m=".4rem" ml=".75rem">
@@ -35,17 +35,17 @@ const RecentCourse = (props: ICourseCardProps) => {
         >
           {truncate(title, { length: 30, separator: /\s/ })}
         </Text>
-        <Flex alignItems={'center'} mt=".3rem">
+        <Flex alignItems={"center"} mt=".3rem">
           <Dot />
           <Text
             layerStyle={TextLayer.smallRegularNormalX}
             color={TypoToken.type_neutral_disable}
             ml="6px"
           >
-            Seen{' '}
-            <chakra.b color={ExtendedColor['darkLevel.100']}>
+            Seen{" "}
+            <chakra.b color={ExtendedColor["darkLevel.100"]}>
               {timeByHour}h
-            </chakra.b>{' '}
+            </chakra.b>{" "}
             ago
           </Text>
         </Flex>

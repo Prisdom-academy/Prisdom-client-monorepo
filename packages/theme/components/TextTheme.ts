@@ -1,6 +1,6 @@
 import { ComponentStyleConfig } from '@chakra-ui/react';
 import { mode } from '@chakra-ui/theme-tools';
-import { ExtendedColor } from 'theme/colors/interfaces';
+import { ExtendedColor } from '../colors/interfaces';
 
 export const TextTheme: ComponentStyleConfig = {
   baseStyle: (props) => ({

@@ -5,23 +5,21 @@ import {
   ComponentWithAs,
   IconProps,
   Text,
-  VStack
-} from '@chakra-ui/react';
-import React, { Children, Fragment, useState } from 'react';
-import { ArrowRightIconOutlined } from 'theme/icons/SVGs/arrow';
-import { TextLayer } from 'theme/typography/interfaces';
-import { styleGen } from './styles';
+  VStack,
+} from "@chakra-ui/react";
+import React, { Children, Fragment, useState } from "react";
+import { ArrowRightIconOutlined } from "@prisdom/theme/icons/SVGs/arrow";
+import { TextLayer } from "@prisdom/theme/typography/interfaces";
+import { styleGen } from "./styles";
 
 interface ICollapsibleNavigationProps extends ButtonProps {
-  IconCollapsed: ComponentWithAs<'svg', IconProps>;
-  IconExpanded: ComponentWithAs<'svg', IconProps>;
+  IconCollapsed: ComponentWithAs<"svg", IconProps>;
+  IconExpanded: ComponentWithAs<"svg", IconProps>;
   title: string;
   isMinimize?: boolean;
 }
 
-const CollapsibleNavigation = (
-  props: ICollapsibleNavigationProps
-) => {
+const CollapsibleNavigation = (props: ICollapsibleNavigationProps) => {
   const {
     children,
     IconCollapsed,
@@ -40,7 +38,7 @@ const CollapsibleNavigation = (
         isActiveThisNav = true;
       }
     } else {
-      throw Error('Please using <CollapsibleNavItem /> here');
+      throw Error("Please using <CollapsibleNavItem /> here");
     }
   });
 
@@ -54,9 +52,7 @@ const CollapsibleNavigation = (
           mr="auto !important"
           color="inherit"
           layerStyle={
-            isCollapsed
-              ? TextLayer.baseRegularNormal
-              : TextLayer.baseBoldNormal
+            isCollapsed ? TextLayer.baseRegularNormal : TextLayer.baseBoldNormal
           }
         >
           {title}
@@ -83,10 +79,7 @@ const CollapsibleNavigation = (
         {!isMinimize && _renderTextAndArrow()}
       </Button>
       <Collapse in={!isCollapsed && !isMinimize} animateOpacity>
-        <VStack
-          data-testid="Collapsible_nav_item"
-          m=".4rem 0 1rem .5rem"
-        >
+        <VStack data-testid="Collapsible_nav_item" m=".4rem 0 1rem .5rem">
           {children}
         </VStack>
       </Collapse>

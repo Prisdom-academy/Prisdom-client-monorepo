@@ -2,13 +2,13 @@ import {
   Button,
   ButtonProps,
   defineStyle,
-  useStyleConfig
-} from '@chakra-ui/react';
-import { Link } from 'react-router-dom';
-import { TextLayer } from 'theme/typography/interfaces';
+  useStyleConfig,
+} from "@chakra-ui/react";
+import { Link } from "react-router-dom";
+import { TextLayer } from "@prisdom/theme/typography/interfaces";
 
 export interface TextButtonProps extends ButtonProps {
-  buttonType?: 'no-round' | 'round';
+  buttonType?: "no-round" | "round";
   linkHref?: string;
 }
 
@@ -19,19 +19,19 @@ export interface TextButtonProps extends ButtonProps {
  */
 const TextButton = (props: TextButtonProps) => {
   const {
-    buttonType = 'no-round',
+    buttonType = "no-round",
     variant,
     size,
     children,
     linkHref,
     ...rest
   } = props;
-  const themeStyle = useStyleConfig('TextButton', { size, variant });
+  const themeStyle = useStyleConfig("TextButton", { size, variant });
 
   const style = defineStyle({
     button: {
-      borderRadius: buttonType === 'no-round' ? '.5rem' : '10rem'
-    }
+      borderRadius: buttonType === "no-round" ? ".5rem" : "10rem",
+    },
   });
 
   return (

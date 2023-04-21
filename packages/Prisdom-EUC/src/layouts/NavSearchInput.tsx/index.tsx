@@ -6,24 +6,24 @@ import {
   InputLeftElement,
   InputRightElement,
   Text,
-  useDisclosure
-} from '@chakra-ui/react';
-import { ChangeEvent, useRef, useState } from 'react';
-import { NavTokenColor } from 'theme/base/aliasTokens/interfaces';
-import { ExtendedColor } from 'theme/colors/interfaces';
-import { SearchNormalIconOutlined } from 'theme/icons/SVGs/searchNormal';
-import { TextLayer } from 'theme/typography/interfaces';
-import SearchResult from './SearchResult';
-import { styles } from './style';
-import HotKeys from 'react-hot-keys';
-import { TypoToken } from 'theme/base/interfaces';
+  useDisclosure,
+} from "@chakra-ui/react";
+import { ChangeEvent, useRef, useState } from "react";
+import { NavTokenColor } from "@prisdom/theme/base/aliasTokens/interfaces";
+import { ExtendedColor } from "@prisdom/theme/colors/interfaces";
+import { SearchNormalIconOutlined } from "@prisdom/theme/icons/SVGs/searchNormal";
+import { TextLayer } from "@prisdom/theme/typography/interfaces";
+import SearchResult from "./SearchResult";
+import { styles } from "./style";
+import HotKeys from "react-hot-keys";
+import { TypoToken } from "@prisdom/theme/base/interfaces";
 
 const DELAY_SEARCH_TIME = 2000; // 2 seconds
 
 const NavSearchInput = () => {
   const { isOpen, onClose, onOpen } = useDisclosure();
   const [isSearching, setIsSearching] = useState(false);
-  const [val, setVal] = useState('');
+  const [val, setVal] = useState("");
   const _searchInputRef = useRef<HTMLInputElement>(null);
 
   const _renderShortcutIcon = () => {
@@ -68,7 +68,7 @@ const NavSearchInput = () => {
 
   return (
     <HotKeys keyName="ctrl+/" onKeyDown={_onShortcut}>
-      <Box position={'relative'}>
+      <Box position={"relative"}>
         <InputGroup>
           <InputLeftElement
             pointerEvents="none"
@@ -83,7 +83,7 @@ const NavSearchInput = () => {
             }
           />
           <Input
-            focusBorderColor={ExtendedColor['primary_dark.500']}
+            focusBorderColor={ExtendedColor["primary_dark.500"]}
             placeholder="Search"
             sx={styles.input}
             ref={_searchInputRef}

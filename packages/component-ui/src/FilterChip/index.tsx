@@ -1,18 +1,18 @@
-import { Button, Flex, Text } from '@chakra-ui/react';
-import React, { useEffect, useState } from 'react';
-import { ChipToken } from 'theme/base/interfaces';
-import CheckIcon from 'theme/icons/SVGs/check';
-import CloseIcon from 'theme/icons/SVGs/close';
-import { TextLayer } from 'theme/typography/interfaces';
-import { stylesGenerator } from './style';
+import { Button, Flex, Text } from "@chakra-ui/react";
+import React, { useEffect, useState } from "react";
+import { ChipToken } from "@prisdom/theme/base/interfaces";
+import CheckIcon from "@prisdom/theme/icons/SVGs/check";
+import CloseIcon from "@prisdom/theme/icons/SVGs/close";
+import { TextLayer } from "@prisdom/theme/typography/interfaces";
+import { stylesGenerator } from "./style";
 
 interface IFilterChipProps {
   Icon: JSX.Element;
   title: string;
   preState?: boolean;
-  chipType?: 'round' | 'no-round';
+  chipType?: "round" | "no-round";
   onClick?: (isSelected: boolean) => void;
-  variant?: 'base' | 'no-border';
+  variant?: "base" | "no-border";
   className?: string;
 }
 
@@ -20,11 +20,11 @@ const FilteredChip = (props: IFilterChipProps) => {
   const {
     Icon,
     preState,
-    chipType = 'no-round',
+    chipType = "no-round",
     title,
     onClick,
-    variant = 'base',
-    className
+    variant = "base",
+    className,
   } = props;
 
   const [isSelected, setIsSelected] = useState(false);
@@ -36,12 +36,12 @@ const FilteredChip = (props: IFilterChipProps) => {
 
     if (isSelected && !isMouseEnter) {
       contentColor =
-        variant === 'base'
+        variant === "base"
           ? ChipToken.cpn_chips_content_s0_default
           : ChipToken.cpn_chips_content_se_default;
     } else if (isSelected && isMouseEnter) {
       contentColor =
-        variant === 'base'
+        variant === "base"
           ? ChipToken.cpn_chips_content_s0_hovered
           : ChipToken.cpn_chips_content_se_default;
     }
@@ -52,32 +52,22 @@ const FilteredChip = (props: IFilterChipProps) => {
   const _renderIcon = () => {
     const defaultProps = {
       fill: ChipToken.cpn_chips_content_00_default,
-      mr: '.3rem',
-      h: '20px',
-      w: '20px'
+      mr: ".3rem",
+      h: "20px",
+      w: "20px",
     };
 
     return React.cloneElement(Icon, defaultProps);
   };
 
   const _renderCheckedIcon = () => {
-    return (
-      <CheckIcon
-        fill={_getContentColor()}
-        h="20px"
-        w="20px"
-        mr=".3rem"
-      />
-    );
+    return <CheckIcon fill={_getContentColor()} h="20px" w="20px" mr=".3rem" />;
   };
 
   const _renderCloseBox = () => {
     const isSelectedAndHovered = isSelected && isMouseEnter;
     return (
-      <Flex
-        sx={styles.closeBox}
-        right={isSelectedAndHovered ? '0' : '-100%'}
-      >
+      <Flex sx={styles.closeBox} right={isSelectedAndHovered ? "0" : "-100%"}>
         <CloseIcon fill={_getContentColor()} h="20px" w="20px" />
       </Flex>
     );
@@ -90,7 +80,7 @@ const FilteredChip = (props: IFilterChipProps) => {
 
   const chipStyles = {
     ...styles.filterChip,
-    ...(isSelected ? styles.filterChipSelected : {})
+    ...(isSelected ? styles.filterChipSelected : {}),
   };
 
   useEffect(() => {
@@ -103,7 +93,7 @@ const FilteredChip = (props: IFilterChipProps) => {
       onMouseEnter={() => setIsMouseEnter(true)}
       onMouseLeave={() => setIsMouseEnter(false)}
       sx={chipStyles}
-      borderRadius={chipType === 'no-round' ? '.45rem' : '10rem'}
+      borderRadius={chipType === "no-round" ? ".45rem" : "10rem"}
       className={className}
     >
       {isSelected ? _renderCheckedIcon() : _renderIcon()}

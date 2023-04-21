@@ -5,16 +5,16 @@ import {
   SystemStyleObject,
   Text
 } from '@chakra-ui/react';
-import TextButton from 'component-ui/buttons/TextButton';
-import RecentCoursesSlider from 'component-ui/Cards/RecentCourse/RecentCoursesSlider';
-import FilteredChip from 'component-ui/FilterChip';
-import { PrisPopover } from 'component-ui/PrisPopover';
+import TextButton from '@prisdom/component-ui/src/buttons/TextButton';
+import RecentCoursesSlider from '@prisdom/component-ui/src/Cards/RecentCourse/RecentCoursesSlider';
+import FilteredChip from '@prisdom/component-ui/src/FilterChip';
+import { PrisPopover } from '@prisdom/component-ui/src/PrisPopover';
 import { myCoursesData, recentItemData } from 'data-test/dataSearch';
 import { MutableRefObject } from 'react';
-import { ArticleIconOutlined } from 'theme/icons/SVGs/article';
-import { CourseIconOutlined } from 'theme/icons/SVGs/course';
-import { UserIconOutlined } from 'theme/icons/SVGs/user';
-import { TextLayer } from 'theme/typography/interfaces';
+import { ArticleIconOutlined } from '@prisdom/theme/icons/SVGs/article';
+import { CourseIconOutlined } from '@prisdom/theme/icons/SVGs/course';
+import { UserIconOutlined } from '@prisdom/theme/icons/SVGs/user';
+import { TextLayer } from '@prisdom/theme/typography/interfaces';
 import SearchItem, {
   SearchItemType
 } from './SearchComponents/SearchItem';

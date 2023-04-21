@@ -1,5 +1,5 @@
 import { CSSObject } from '@emotion/react';
-import { FontFamily } from 'theme/base/interfaces';
+import { FontFamily } from '../base/interfaces';
 
 /**
  * @param fontSize px

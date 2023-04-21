@@ -1,5 +1,5 @@
 import { defineStyle } from '@chakra-ui/react';
-import { NavTokenColor } from 'theme/base/aliasTokens/interfaces';
+import { NavTokenColor } from '@prisdom/theme/base/aliasTokens/interfaces';
 
 export const styles = defineStyle({
   root: {

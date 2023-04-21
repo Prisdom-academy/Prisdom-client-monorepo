@@ -1,7 +1,7 @@
 import { createMultiStyleConfigHelpers } from '@chakra-ui/react';
 import { radioAnatomy } from '@chakra-ui/anatomy';
-import { ColorToken } from 'theme/base/interfaces';
-import { ExtendedColor } from 'theme/colors/interfaces';
+import { ColorToken } from '../base/interfaces';
+import { ExtendedColor } from '../colors/interfaces';
 
 const { definePartsStyle, defineMultiStyleConfig } =
   createMultiStyleConfigHelpers(radioAnatomy.keys);

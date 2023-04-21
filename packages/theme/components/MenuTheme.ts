@@ -1,7 +1,7 @@
 import { menuAnatomy } from '@chakra-ui/anatomy';
 import { createMultiStyleConfigHelpers } from '@chakra-ui/react';
-import { ColorToken } from 'theme/base/interfaces';
-import { ExtendedColor } from 'theme/colors/interfaces';
+import { ColorToken } from '../base/interfaces';
+import { ExtendedColor } from '../colors/interfaces';
 
 export const { definePartsStyle, defineMultiStyleConfig } =
   createMultiStyleConfigHelpers(menuAnatomy.keys);

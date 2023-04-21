@@ -1,4 +1,4 @@
-import { ExtendedColor } from 'theme/colors/interfaces';
+import { ExtendedColor } from '../../colors/interfaces';
 
 export const chipTokenDef = {
   cpn_chips_content_00_default: {

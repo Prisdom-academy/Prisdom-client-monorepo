@@ -2,11 +2,11 @@
 	"compilerOptions": {
 		"baseUrl": ".",
 		"paths": {
-			"@prisdom/theme/*": ["../theme/*"]
+			"@prisdom/component-ui/src/*": ["../component-ui/src/*"]
 		},
 		"allowSyntheticDefaultImports": true,
 		"esModuleInterop": true,
-		"jsx": "react-jsx",
+		"jsx": "react-jsx"
 	},
 	"exclude": ["node_modules"]
 }

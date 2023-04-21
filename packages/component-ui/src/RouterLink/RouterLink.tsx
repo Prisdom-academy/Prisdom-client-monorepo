@@ -1,11 +1,7 @@
-import { Link } from 'react-router-dom';
-import {
-  chakra,
-  LinkProps,
-  useColorModeValue
-} from '@chakra-ui/react';
-import React from 'react';
-import { ExtendedColor } from 'theme/colors/interfaces';
+import { Link } from "react-router-dom";
+import { chakra, LinkProps, useColorModeValue } from "@chakra-ui/react";
+import React from "react";
+import { ExtendedColor } from "@prisdom/theme/colors/interfaces";
 
 export interface IRouterLinkProps extends LinkProps {
   to: string;
@@ -17,8 +13,8 @@ export interface IRouterLinkProps extends LinkProps {
  */
 export function RouterLink(props: IRouterLinkProps) {
   const linkColor = useColorModeValue(
-    ExtendedColor['primary_dark.500'],
-    ExtendedColor['primary_dark.100']
+    ExtendedColor["primary_dark.500"],
+    ExtendedColor["primary_dark.100"]
   );
 
   const { to, children, color = linkColor } = props;
@@ -30,7 +26,7 @@ export function RouterLink(props: IRouterLinkProps) {
       color={color}
       to={to}
       _hover={{
-        textDecor: 'underline'
+        textDecor: "underline",
       }}
     >
       {children}

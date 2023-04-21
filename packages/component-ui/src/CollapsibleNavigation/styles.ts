@@ -1,6 +1,6 @@
 import { defineStyle } from '@chakra-ui/react';
-import { NavTokenColor } from 'theme/base/aliasTokens/interfaces';
-import { CollapsibleNavToken } from 'theme/base/interfaces';
+import { NavTokenColor } from '@prisdom/theme/base/aliasTokens/interfaces';
+import { CollapsibleNavToken } from '@prisdom/theme/base/interfaces';
 
 const _activeStyle = defineStyle({
   _active: {

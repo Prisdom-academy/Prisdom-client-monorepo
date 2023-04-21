@@ -7,13 +7,13 @@ import { ButtonTheme } from './components/ButtonTheme';
 import { TooltipTheme } from './components/TooltipTheme';
 import { TextTheme } from './components/TextTheme';
 import { breakpoints } from './base/breakPoints';
-import { PrisButtonStyle } from 'component-ui/buttons/PrisButton/styles';
-import { PrisButtonSecStyle } from 'component-ui/buttons/PrisButtonSec/styles';
-import { TextButtonStyle } from 'component-ui/buttons/TextButton/styles';
-import { CheckboxStyles } from 'theme/components/CheckboxTheme';
 import { dividerTheme } from './components/DividerTheme';
 import { radioTheme } from './components/RadioTheme';
 import { MenuTheme } from './components/MenuTheme';
+import { CheckboxStyles } from 'components/CheckboxTheme';
+import { PrisButtonStyle } from '@prisdom/component-ui/src/buttons/PrisButton/styles';
+import { PrisButtonSecStyle } from '@prisdom/component-ui/src/buttons/PrisButtonSec/styles';
+import { TextButtonStyle } from '@prisdom/component-ui/src/buttons/TextButton/styles';
 
 export const chakraTheme = extendTheme({
   config: {

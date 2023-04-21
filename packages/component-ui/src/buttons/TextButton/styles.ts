@@ -1,6 +1,6 @@
 /* eslint-disable quote-props */
 import { defineStyleConfig } from '@chakra-ui/react';
-import { ButtonTokenColor } from 'theme/base/interfaces';
+import { ButtonTokenColor } from '@prisdom/theme/base/interfaces';
 
 export const TextButtonStyle = defineStyleConfig({
   baseStyle: {

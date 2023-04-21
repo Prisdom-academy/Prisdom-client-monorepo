@@ -1,4 +1,4 @@
-import { ExtendedColor } from 'theme/colors/interfaces';
+import { ExtendedColor } from '../../colors/interfaces';
 
 const checkBoxes = {
   cpn_check_box_bg_checkmark: {

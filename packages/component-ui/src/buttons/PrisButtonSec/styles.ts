@@ -1,6 +1,6 @@
 import { defineStyleConfig } from '@chakra-ui/react';
-import { ButtonTokenColor } from 'theme/base/interfaces';
-import { ExtendedColor } from 'theme/colors/interfaces';
+import { ButtonTokenColor } from '@prisdom/theme/base/interfaces';
+import { ExtendedColor } from '@prisdom/theme/colors/interfaces';
 import { fitButtonReusableStyle } from '../PrisButton/styles';
 
 export const PrisButtonSecStyle = defineStyleConfig({

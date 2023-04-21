@@ -1,4 +1,4 @@
-import { ExtendedColor } from 'theme/colors/interfaces';
+import { ExtendedColor } from '../../colors/interfaces';
 import { ColorToken } from '../interfaces';
 
 export const collapsibleNavTokenDef = {
