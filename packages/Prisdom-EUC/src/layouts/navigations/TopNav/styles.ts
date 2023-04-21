@@ -1,6 +1,9 @@
 import { defineStyle } from '@chakra-ui/react';
 import { NavTokenColor } from '@prisdom/theme/base/aliasTokens/interfaces';
-import { ButtonTokenColor, ShadowToken } from '@prisdom/theme/base/interfaces';
+import {
+  ButtonTokenColor,
+  ShadowToken
+} from '@prisdom/theme/base/interfaces';
 
 export const navStyle = defineStyle({
   root: {

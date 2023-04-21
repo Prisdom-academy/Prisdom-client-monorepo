@@ -25,7 +25,10 @@ const registerServiceSingleton = registerServiceSingletonPre.bind(
 
 registerServiceSingleton(Symbols.IGraphqlService, GraphqlService);
 registerServiceSingleton(Symbols.IAuthStore, AuthStore);
-registerServiceSingleton(Symbols.IErrorHandlingService, ErrorHandlingService);
+registerServiceSingleton(
+  Symbols.IErrorHandlingService,
+  ErrorHandlingService
+);
 registerServiceSingleton(
   Symbols.INotificationModalStore,
   NotificationModalStore

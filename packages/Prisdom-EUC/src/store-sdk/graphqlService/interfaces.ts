@@ -13,7 +13,10 @@ export interface IGraphqlService {
     errorHandler?: (error: any) => void
   ) => Promise<Response | undefined>;
 
-  sendRequestWithCache: <Response, Variable extends VariableType = undefined>(
+  sendRequestWithCache: <
+    Response,
+    Variable extends VariableType = undefined
+  >(
     gqlString: RequestDocument,
     variables?: Variable,
     errorHandler?: (error: any) => void

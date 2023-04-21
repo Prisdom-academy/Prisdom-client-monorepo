@@ -1,8 +1,6 @@
-import { NotificationTemplate } from 'models/notification';
+import { NotificationTemplate } from "models/notification";
 
-export function getHighlightKeyword(
-  templateString: NotificationTemplate
-) {
+export function getHighlightKeyword(templateString: NotificationTemplate) {
   const strTemplateRegex = /(<<[\w\s-]+>>)/gi;
   const getKeywordOnlyRegex = /<<([\w\s-]+)>>/;
   const listKeywordWithTemplate = Array.from(
@@ -17,7 +15,7 @@ export function getHighlightKeyword(
     });
     return highlightKeywords;
   } else {
-    throw new Error('Template notification is not a correct form!');
+    throw new Error("Template notification is not a correct form!");
   }
 }
 
@@ -33,6 +31,6 @@ export function getOriginalStringFromTemplate(
   });
   return {
     originalStr,
-    highlightKeyword: allKeywords
+    highlightKeyword: allKeywords,
   };
 }

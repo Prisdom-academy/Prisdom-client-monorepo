@@ -1,5 +1,5 @@
-import { chakra } from '@chakra-ui/react';
+import { chakra } from "@chakra-ui/react";
 
-const Nav = chakra('nav');
+const Nav = chakra("nav");
 
 export default Nav;

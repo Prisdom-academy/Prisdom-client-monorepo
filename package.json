@@ -1,10 +1,29 @@
 {
-    "name": "prisdom-mono-repo",
-    "private": true,
-    "workspaces": ["packages/*"],
-    "scripts": {
-        "start-app": "yarn workspace @prisdom/app run start",
-        "build-app": "yarn workspace @prisdom/app build",
-        "test-app": "yarn workspace @prisdom/app test"
+  "name": "prisdom-mono-repo",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "start-app": "yarn workspace @prisdom/app run start",
+    "build-app": "yarn workspace @prisdom/app build",
+    "test-app": "yarn workspace @prisdom/app test",
+    "prepare": "husky install",
+    "prettier-write": "prettier --write \"./packages/**/*.ts\"  --ignore-unknown"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "prettier-write"
     }
+  },
+  "lint-staged": {
+    "./packages/**/*": "prettier --write --ignore-unknown"
+  },
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "prettier": "^2.8.7"
+  },
+  "dependencies": {
+    "lint-staged": "^13.2.1"
+  }
 }

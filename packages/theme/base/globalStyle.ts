@@ -1,17 +1,17 @@
-import { defineStyle } from '@chakra-ui/react';
+import { defineStyle } from "@chakra-ui/react";
 
 export const globalStyle = defineStyle({
   html: {
     fontSize: {
-      base: '85%',
-      sm: '90%',
-      md: '100%'
+      base: "85%",
+      sm: "90%",
+      md: "100%",
     },
-    boxSizing: 'border-box'
+    boxSizing: "border-box",
   },
   body: {
-    fontFamily: 'Inter',
-    fontSize: '1rem',
-    color: 'gray.900'
-  }
+    fontFamily: "Inter",
+    fontSize: "1rem",
+    color: "gray.900",
+  },
 });

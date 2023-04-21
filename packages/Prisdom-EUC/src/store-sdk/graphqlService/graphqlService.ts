@@ -19,7 +19,9 @@ import type {
 @injectable()
 export class GraphqlService implements IGraphqlService {
   private endpoint = config.gqlEndpoint;
-  private readonly client = new GraphQLClient(this.endpoint, { headers: {} });
+  private readonly client = new GraphQLClient(this.endpoint, {
+    headers: {}
+  });
 
   @inject(Symbols.IErrorHandlingService)
   private errorService!: IErrorHandlingService;
@@ -37,10 +39,15 @@ export class GraphqlService implements IGraphqlService {
   ) {
     const authData = this.getToken();
     if (!errorHandler) {
-      errorHandler = this.errorService.defaultHandling.bind(this.errorService);
+      errorHandler = this.errorService.defaultHandling.bind(
+        this.errorService
+      );
     }
     if (authData?.token) {
-      this.client.setHeader('authorization', `Bearer ${authData.token}`);
+      this.client.setHeader(
+        'authorization',
+        `Bearer ${authData.token}`
+      );
     }
     try {
       return await this.client.request<T>(gqlString, variables);
@@ -57,10 +64,15 @@ export class GraphqlService implements IGraphqlService {
     const authData = this.getToken();
 
     if (!errorHandler) {
-      errorHandler = this.errorService.defaultHandling.bind(this.errorService);
+      errorHandler = this.errorService.defaultHandling.bind(
+        this.errorService
+      );
     }
     if (authData?.token) {
-      this.client.setHeader('authorization', `Bearer ${authData.token}`);
+      this.client.setHeader(
+        'authorization',
+        `Bearer ${authData.token}`
+      );
     }
     try {
       let data: T | undefined = undefined;

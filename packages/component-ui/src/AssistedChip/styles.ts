@@ -1,8 +1,8 @@
-import { defineStyle } from '@chakra-ui/react';
-import { merge } from 'lodash';
-import { ChipToken } from '@prisdom/theme/base/interfaces';
+import { defineStyle } from "@chakra-ui/react";
+import { merge } from "lodash";
+import { ChipToken } from "@prisdom/theme/base/interfaces";
 
-export type ChipVariant = 'default' | 'elevator';
+export type ChipVariant = "default" | "elevator";
 export const stylesGenerator = (variant: ChipVariant) => {
   const variantsForNormalState = defineStyle({
     default: {
@@ -11,32 +11,31 @@ export const stylesGenerator = (variant: ChipVariant) => {
       fill: ChipToken.cpn_chips_content_00_default,
       _hover: {
         bgColor: ChipToken.cpn_chips_bg0_00_hovered,
-        borderColor: ChipToken.cpn_chips_stroke_00_hovered
+        borderColor: ChipToken.cpn_chips_stroke_00_hovered,
       },
       _disabled: {
-        bgColor: 'transparent !important',
-        color: ChipToken.cpn_chips_content_00_disabled + '!important',
-        borderColor:
-          ChipToken.cpn_chips_content_00_disabled + '!important',
-        fill: ChipToken.cpn_chips_content_00_disabled + '!important'
-      }
+        bgColor: "transparent !important",
+        color: ChipToken.cpn_chips_content_00_disabled + "!important",
+        borderColor: ChipToken.cpn_chips_content_00_disabled + "!important",
+        fill: ChipToken.cpn_chips_content_00_disabled + "!important",
+      },
     },
 
     elevator: {
-      borderColor: 'transparent !important',
+      borderColor: "transparent !important",
       color: ChipToken.cpn_chips_content_0e_default,
       fill: ChipToken.cpn_chips_content_0e_default,
       bgColor: ChipToken.cpn_chips_bg0_0e_default,
       _hover: {
-        opacity: 0.7
+        opacity: 0.7,
       },
       _disabled: {
         opacity: 1,
         bgColor: ChipToken.cpn_chips_0e_disabled,
-        color: ChipToken.cpn_chips_0e_disabled + '!important',
-        fill: ChipToken.cpn_chips_0e_disabled + '!important'
-      }
-    }
+        color: ChipToken.cpn_chips_0e_disabled + "!important",
+        fill: ChipToken.cpn_chips_0e_disabled + "!important",
+      },
+    },
   });
 
   const variantForSelectedState = defineStyle({
@@ -47,8 +46,8 @@ export const stylesGenerator = (variant: ChipVariant) => {
 
       _hover: {
         color: ChipToken.cpn_chips_content_0_00_focused,
-        fill: ChipToken.cpn_chips_content_0_00_focused
-      }
+        fill: ChipToken.cpn_chips_content_0_00_focused,
+      },
     },
 
     elevator: {
@@ -58,21 +57,21 @@ export const stylesGenerator = (variant: ChipVariant) => {
 
       _hover: {
         color: ChipToken.cpn_chips_content_0e_focused,
-        fill: ChipToken.cpn_chips_content_0e_focused
-      }
-    }
+        fill: ChipToken.cpn_chips_content_0e_focused,
+      },
+    },
   });
 
   const chipBaseStyle = defineStyle({
     chip: {
-      border: '1px solid',
-      minW: '4rem',
-      minH: '2rem',
-      p: '0 .75rem',
+      border: "1px solid",
+      minW: "4rem",
+      minH: "2rem",
+      p: "0 .75rem",
       _disabled: {
-        cursor: 'not-allowed'
-      }
-    }
+        cursor: "not-allowed",
+      },
+    },
   });
 
   return {
@@ -80,7 +79,7 @@ export const stylesGenerator = (variant: ChipVariant) => {
     chip: merge(chipBaseStyle.chip, variantsForNormalState[variant]),
 
     selectedChip: {
-      ...variantForSelectedState[variant]
-    }
+      ...variantForSelectedState[variant],
+    },
   };
 };

@@ -1,13 +1,13 @@
-import { aliasNavToken } from './aliasTokens/nav';
-import { borders } from './semanticTokens/borderTokens';
-import { btnTokens } from './semanticTokens/buttonToken';
-import { cboxTokens } from './semanticTokens/checkboxToken';
-import { chipTokenDef } from './semanticTokens/chipToken';
-import { collapsibleNavTokenDef } from './semanticTokens/collapsibleNavToken';
-import { colorTokens } from './semanticTokens/colorToken';
-import { shadowsTokenDefinition } from './semanticTokens/shadowsToken';
-import { typographyTokens } from './semanticTokens/typography';
-import { typoDef } from './semanticTokens/typoToken';
+import { aliasNavToken } from "./aliasTokens/nav";
+import { borders } from "./semanticTokens/borderTokens";
+import { btnTokens } from "./semanticTokens/buttonToken";
+import { cboxTokens } from "./semanticTokens/checkboxToken";
+import { chipTokenDef } from "./semanticTokens/chipToken";
+import { collapsibleNavTokenDef } from "./semanticTokens/collapsibleNavToken";
+import { colorTokens } from "./semanticTokens/colorToken";
+import { shadowsTokenDefinition } from "./semanticTokens/shadowsToken";
+import { typographyTokens } from "./semanticTokens/typography";
+import { typoDef } from "./semanticTokens/typoToken";
 
 export const semanticTokens = {
   fonts: typographyTokens,
@@ -19,8 +19,8 @@ export const semanticTokens = {
     ...aliasNavToken,
     ...chipTokenDef,
     ...typoDef,
-    ...collapsibleNavTokenDef
+    ...collapsibleNavTokenDef,
   },
   shadows: shadowsTokenDefinition,
-  borders: borders
+  borders: borders,
 };

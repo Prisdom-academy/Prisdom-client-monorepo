@@ -1,4 +1,4 @@
-import { MouseEvent, RefObject, WheelEvent } from 'react';
+import { MouseEvent, RefObject, WheelEvent } from "react";
 
 /**
  * Hook contain logic handling drag and scroll behavior
@@ -19,8 +19,8 @@ const useDraggableScroll = <T extends HTMLDivElement>(
       pos.x = e.clientX;
       pos.top = sliderDOM.scrollTop;
       pos.y = e.clientY;
-      sliderDOM.style.cursor = 'grabbing';
-      sliderDOM.style.userSelect = 'none';
+      sliderDOM.style.cursor = "grabbing";
+      sliderDOM.style.userSelect = "none";
     }
   };
 
@@ -39,8 +39,8 @@ const useDraggableScroll = <T extends HTMLDivElement>(
     isMouseDown = false;
     const sliderDOM = sliderRef.current;
     if (sliderDOM) {
-      sliderDOM.style.cursor = 'grab';
-      sliderDOM.style.removeProperty('user-select');
+      sliderDOM.style.cursor = "grab";
+      sliderDOM.style.removeProperty("user-select");
     }
   };
 
@@ -57,7 +57,7 @@ const useDraggableScroll = <T extends HTMLDivElement>(
     onMouseMove: _onMouseMove,
     onMouseUp: _onMouseUpAndLeave,
     onMouseLeave: _onMouseUpAndLeave,
-    onWheel: _onWheelEvent
+    onWheel: _onWheelEvent,
   };
 };
 
