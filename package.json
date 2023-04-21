@@ -1,5 +1,10 @@
 {
     "name": "prisdom-mono-repo",
     "private": true,
-    "workspaces": ["packages/*"]
+    "workspaces": ["packages/*"],
+    "scripts": {
+        "start-app": "yarn workspace @prisdom/app run start",
+        "build-app": "yarn workspace @prisdom/app build",
+        "test-app": "yarn workspace @prisdom/app test"
+    }
 }
