@@ -1,7 +1,7 @@
-import img1 from 'theme/icons/Images/image-demo-1.jpg';
-import img2 from 'theme/icons/Images/image-demo-2.jpg';
-import img3 from 'theme/icons/Images/image-demo-3.jpg';
-import img4 from 'theme/icons/Images/image-demo-4.jpg';
+import img1 from '@prisdom/theme/icons/Images/image-demo-1.jpg';
+import img2 from '@prisdom/theme/icons/Images/image-demo-2.jpg';
+import img3 from '@prisdom/theme/icons/Images/image-demo-3.jpg';
+import img4 from '@prisdom/theme/icons/Images/image-demo-4.jpg';
 
 export const recentItemData = [
   {

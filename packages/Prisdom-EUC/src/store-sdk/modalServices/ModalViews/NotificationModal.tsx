@@ -19,8 +19,8 @@ import {
   IconProps,
   HStack
 } from '@chakra-ui/react';
-import { ExtendedColor } from 'theme/colors/interfaces';
-import { TextLayer } from 'theme/typography/interfaces';
+import { ExtendedColor } from '@prisdom/theme/colors/interfaces';
+import { TextLayer } from '@prisdom/theme/typography/interfaces';
 
 export type NotificationModalType = 'info' | 'error' | 'success';
 

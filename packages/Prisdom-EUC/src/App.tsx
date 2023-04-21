@@ -2,7 +2,7 @@ import { Box, VStack } from '@chakra-ui/react';
 import Navigation from 'layouts/navigations';
 import { AuthContainer } from 'store-sdk/authStore/AuthView/AuthContainer';
 import { ModalContainer } from 'store-sdk/modalServices/ModalViews/NotificationModalContainer';
-import './theme/globalCSS/scroll.css';
+import '@prisdom/theme/globalCSS/scroll.css';
 
 function App() {
   return (

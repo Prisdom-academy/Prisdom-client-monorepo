@@ -1,7 +1,7 @@
-import person1 from 'theme/icons/Images/persons/person1.jpg';
-import person2 from 'theme/icons/Images/persons/person2.jpg';
-import person3 from 'theme/icons/Images/persons/person3.jpg';
-import person4 from 'theme/icons/Images/persons/person4.jpg';
+import person1 from '@prisdom/theme/icons/Images/persons/person1.jpg';
+import person2 from '@prisdom/theme/icons/Images/persons/person2.jpg';
+import person3 from '@prisdom/theme/icons/Images/persons/person3.jpg';
+import person4 from '@prisdom/theme/icons/Images/persons/person4.jpg';
 
 export const DataRanking = [
   {

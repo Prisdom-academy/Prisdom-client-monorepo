@@ -5,8 +5,8 @@ import {
   BorderToken,
   CheckBoxTokenColor,
   ColorToken
-} from 'theme/base/interfaces';
-import { shadowsTokenDefinition } from 'theme/base/semanticTokens/shadowsToken';
+} from '@prisdom/theme/base/interfaces';
+import { shadowsTokenDefinition } from '@prisdom/theme/base/semanticTokens/shadowsToken';
 
 const { definePartsStyle, defineMultiStyleConfig } =
   createMultiStyleConfigHelpers(checkboxAnatomy.keys);

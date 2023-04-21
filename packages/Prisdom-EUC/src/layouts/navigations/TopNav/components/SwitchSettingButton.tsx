@@ -6,9 +6,9 @@ import {
   Text
 } from '@chakra-ui/react';
 import { startCase } from 'lodash';
-import { NavTokenColor } from 'theme/base/aliasTokens/interfaces';
-import { ExtendedColor } from 'theme/colors/interfaces';
-import { TextLayer } from 'theme/typography/interfaces';
+import { NavTokenColor } from '@prisdom/theme/base/aliasTokens/interfaces';
+import { ExtendedColor } from '@prisdom/theme/colors/interfaces';
+import { TextLayer } from '@prisdom/theme/typography/interfaces';
 import { styles } from './styles';
 
 export interface SwitchSettingButtonProps {

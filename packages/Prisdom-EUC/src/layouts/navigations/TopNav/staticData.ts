@@ -1,6 +1,6 @@
-import { ArticleIconOutlined } from 'theme/icons/SVGs/article';
-import { CourseIconOutlined } from 'theme/icons/SVGs/course';
-import { UserIconOutlined } from 'theme/icons/SVGs/user';
+import { ArticleIconOutlined } from '@prisdom/theme/icons/SVGs/article';
+import { CourseIconOutlined } from '@prisdom/theme/icons/SVGs/course';
+import { UserIconOutlined } from '@prisdom/theme/icons/SVGs/user';
 
 export const chipsArray = [
   {

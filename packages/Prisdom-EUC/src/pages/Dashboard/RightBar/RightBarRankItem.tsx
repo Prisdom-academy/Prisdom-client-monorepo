@@ -5,14 +5,17 @@ import {
   StackProps,
   Text
 } from '@chakra-ui/react';
-import { RankMedalGold } from 'theme/icons/SVGs/rankMedal';
-import { TextLayer } from 'theme/typography/interfaces';
+import { RankMedalGold } from '@prisdom/theme/icons/SVGs/rankMedal';
+import { TextLayer } from '@prisdom/theme/typography/interfaces';
 import { stylesComputed } from './styles';
-import { ColorToken, TypoToken } from 'theme/base/interfaces';
-import { PriscoinIconFilled } from 'theme/icons/SVGs/priscoin';
+import {
+  ColorToken,
+  TypoToken
+} from '@prisdom/theme/base/interfaces';
+import { PriscoinIconFilled } from '@prisdom/theme/icons/SVGs/priscoin';
 import { Link } from 'react-router-dom';
-import { ExtendedColor } from 'theme/colors/interfaces';
-import { IsMeArrowIcon } from 'theme/icons/SVGs/arrow';
+import { ExtendedColor } from '@prisdom/theme/colors/interfaces';
+import { IsMeArrowIcon } from '@prisdom/theme/icons/SVGs/arrow';
 
 interface IRightBarRankItem extends StackProps {
   id: string;

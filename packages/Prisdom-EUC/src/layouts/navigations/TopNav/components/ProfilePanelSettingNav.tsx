@@ -5,9 +5,9 @@ import {
   IconProps,
   Text
 } from '@chakra-ui/react';
-import { ExtendedColor } from 'theme/colors/interfaces';
-import { ArrowRightIconOutlined } from 'theme/icons/SVGs/arrow';
-import { TextLayer } from 'theme/typography/interfaces';
+import { ExtendedColor } from '@prisdom/theme/colors/interfaces';
+import { ArrowRightIconOutlined } from '@prisdom/theme/icons/SVGs/arrow';
+import { TextLayer } from '@prisdom/theme/typography/interfaces';
 import { styles } from './styles';
 
 interface IProfilePanelSettingNavProps {

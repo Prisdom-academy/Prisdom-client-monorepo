@@ -1,7 +1,7 @@
 import { Box, HStack, Text } from '@chakra-ui/react';
-import { TextLayer } from 'theme/typography/interfaces';
+import { TextLayer } from '@prisdom/theme/typography/interfaces';
 import RightBar from './RightBar';
-import SafeContainer from 'component-ui/SafeContainer';
+import SafeContainer from '@prisdom/component-ui/src/SafeContainer';
 
 const Dashboard = () => {
   return (

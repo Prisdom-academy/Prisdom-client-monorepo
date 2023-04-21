@@ -1,6 +1,6 @@
 import { Center, Text } from '@chakra-ui/react';
-import { ColorToken } from 'theme/base/interfaces';
-import { TextLayer } from 'theme/typography/interfaces';
+import { ColorToken } from '@prisdom/theme/base/interfaces';
+import { TextLayer } from '@prisdom/theme/typography/interfaces';
 
 const DefaultExplore = () => {
   return (

@@ -11,40 +11,46 @@ import {
   LinkOverlay
 } from '@chakra-ui/react';
 import { styles } from './styles';
-import BadgeInfo from 'component-ui/Badges/BadgeInfor';
-import { TextLayer } from 'theme/typography/interfaces';
-import { PriscoinIconFilled } from 'theme/icons/SVGs/priscoin';
-import { ColorToken, TypoToken } from 'theme/base/interfaces';
-import { CourseIconFilled } from 'theme/icons/SVGs/course';
-import PrisButton from 'component-ui/buttons/PrisButton';
-import TextButton from 'component-ui/buttons/TextButton';
+import BadgeInfo from '@prisdom/component-ui/src/Badges/BadgeInfor';
+import { TextLayer } from '@prisdom/theme/typography/interfaces';
+import { PriscoinIconFilled } from '@prisdom/theme/icons/SVGs/priscoin';
+import {
+  ColorToken,
+  TypoToken
+} from '@prisdom/theme/base/interfaces';
+import { CourseIconFilled } from '@prisdom/theme/icons/SVGs/course';
+import PrisButton from '@prisdom/component-ui/src/buttons/PrisButton';
+import TextButton from '@prisdom/component-ui/src/buttons/TextButton';
 import ProfilePanelSettingNav from './ProfilePanelSettingNav';
-import { ProfileIconOutlined } from 'theme/icons/SVGs/profile';
-import { ThemeIconOutlined } from 'theme/icons/SVGs/theme';
-import { LanguageIconOutlined } from 'theme/icons/SVGs/language';
-import { LogoutIconOutlined } from 'theme/icons/SVGs/logOut';
-import { ExtendedColor } from 'theme/colors/interfaces';
+import { ProfileIconOutlined } from '@prisdom/theme/icons/SVGs/profile';
+import { ThemeIconOutlined } from '@prisdom/theme/icons/SVGs/theme';
+import { LanguageIconOutlined } from '@prisdom/theme/icons/SVGs/language';
+import { LogoutIconOutlined } from '@prisdom/theme/icons/SVGs/logOut';
+import { ExtendedColor } from '@prisdom/theme/colors/interfaces';
 import { ProfileSettingEnum, UserType } from 'models/user';
 import { Fragment, useState } from 'react';
-import { ArrowRightIconOutlined } from 'theme/icons/SVGs/arrow';
+import { ArrowRightIconOutlined } from '@prisdom/theme/icons/SVGs/arrow';
 import SwitchSettingButton, {
   SwitchSettingButtonProps
 } from './SwitchSettingButton';
 import {
   IncognitoIconFilled,
   IncognitoIconOutlined
-} from 'theme/icons/SVGs/incognito';
+} from '@prisdom/theme/icons/SVGs/incognito';
 import {
   LearnerIconFilled,
   LearnerIconOutlined
-} from 'theme/icons/SVGs/learner';
+} from '@prisdom/theme/icons/SVGs/learner';
 import {
   InstructorIconFilled,
   InstructorIconOutlined
-} from 'theme/icons/SVGs/instructor';
-import { UKFlagIcon, VietnamFlagIcon } from 'theme/icons/SVGs/flag';
-import 'theme/globalCSS/animation.css';
-import { PrisPopover } from 'component-ui/PrisPopover';
+} from '@prisdom/theme/icons/SVGs/instructor';
+import {
+  UKFlagIcon,
+  VietnamFlagIcon
+} from '@prisdom/theme/icons/SVGs/flag';
+import '@prisdom/theme/globalCSS/animation.css';
+import { PrisPopover } from '@prisdom/component-ui/src/PrisPopover';
 
 export interface IProfilePanelProps {
   isShow: boolean;

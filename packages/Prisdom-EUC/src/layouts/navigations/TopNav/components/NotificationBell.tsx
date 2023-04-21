@@ -1,10 +1,10 @@
 import { Box, Flex, Text, useDisclosure } from '@chakra-ui/react';
-import PrisButton from 'component-ui/buttons/PrisButton';
+import PrisButton from '@prisdom/component-ui/src/buttons/PrisButton';
 import { dataNotifications } from 'data-test/dataNotification';
 import { Fragment } from 'react';
-import { NavTokenColor } from 'theme/base/aliasTokens/interfaces';
-import { NotificationIconFilled } from 'theme/icons/SVGs/notification';
-import { TextLayer } from 'theme/typography/interfaces';
+import { NavTokenColor } from '@prisdom/theme/base/aliasTokens/interfaces';
+import { NotificationIconFilled } from '@prisdom/theme/icons/SVGs/notification';
+import { TextLayer } from '@prisdom/theme/typography/interfaces';
 import NotificationPanel from './NotificationPanel';
 import { styles } from './styles';
 

@@ -5,7 +5,7 @@ import container from 'store-sdk/ioc-container/ioc';
 import { IOCProvider } from 'store-sdk/ioc-container/ioc.context';
 import './i18n/i18n';
 import { ChakraProvider } from '@chakra-ui/react';
-import { chakraTheme } from 'theme/chakraTheme';
+import { chakraTheme } from '@prisdom/theme/chakraTheme';
 import { RouterProvider } from 'react-router-dom';
 import router from 'router/routes/router';
 

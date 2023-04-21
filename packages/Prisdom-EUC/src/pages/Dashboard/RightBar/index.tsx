@@ -8,20 +8,23 @@ import {
 } from '@chakra-ui/react';
 import { CourseTracking } from './CourseTracking';
 import { stylesComputed } from './styles';
-import { ColorToken, TypoToken } from 'theme/base/interfaces';
-import { NavTokenColor } from 'theme/base/aliasTokens/interfaces';
-import goldMedal from 'theme/icons/Images/illustrations/GoldMedal.png';
-import { TextLayer } from 'theme/typography/interfaces';
-import TextButton from 'component-ui/buttons/TextButton';
-import { InforCircleOutlined } from 'theme/icons/SVGs/infoCircle';
+import {
+  ColorToken,
+  TypoToken
+} from '@prisdom/theme/base/interfaces';
+import { NavTokenColor } from '@prisdom/theme/base/aliasTokens/interfaces';
+import goldMedal from '@prisdom/theme/icons/Images/illustrations/GoldMedal.png';
+import { TextLayer } from '@prisdom/theme/typography/interfaces';
+import TextButton from '@prisdom/component-ui/src/buttons/TextButton';
+import { InforCircleOutlined } from '@prisdom/theme/icons/SVGs/infoCircle';
 import {
   TrendDownOutlined,
   TrendUpOutlined
-} from 'theme/icons/SVGs/trend';
-import { PriscoinIconFilled } from 'theme/icons/SVGs/priscoin';
+} from '@prisdom/theme/icons/SVGs/trend';
+import { PriscoinIconFilled } from '@prisdom/theme/icons/SVGs/priscoin';
 import RightBarRankItem from './RightBarRankItem';
 import { DataRanking } from 'data-test/data-ranking';
-import { ClockIconFilled } from 'theme/icons/SVGs/clock';
+import { ClockIconFilled } from '@prisdom/theme/icons/SVGs/clock';
 
 interface RightBarProps {
   isDownTrend?: boolean;

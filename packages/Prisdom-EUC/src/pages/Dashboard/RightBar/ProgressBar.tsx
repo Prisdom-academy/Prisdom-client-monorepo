@@ -1,6 +1,6 @@
 import { Box, BoxProps } from '@chakra-ui/react';
 import { stylesComputed } from './styles';
-import { ColorToken } from 'theme/base/interfaces';
+import { ColorToken } from '@prisdom/theme/base/interfaces';
 
 interface IProgressBar extends BoxProps {
   trackColor?: string;

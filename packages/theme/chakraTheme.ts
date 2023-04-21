@@ -10,7 +10,7 @@ import { breakpoints } from './base/breakPoints';
 import { dividerTheme } from './components/DividerTheme';
 import { radioTheme } from './components/RadioTheme';
 import { MenuTheme } from './components/MenuTheme';
-import { CheckboxStyles } from 'components/CheckboxTheme';
+import { CheckboxStyles } from './components/CheckboxTheme';
 import { PrisButtonStyle } from '@prisdom/component-ui/src/buttons/PrisButton/styles';
 import { PrisButtonSecStyle } from '@prisdom/component-ui/src/buttons/PrisButtonSec/styles';
 import { TextButtonStyle } from '@prisdom/component-ui/src/buttons/TextButton/styles';

@@ -1,6 +1,6 @@
 import { defineStyle } from '@chakra-ui/react';
-import { NavTokenColor } from 'theme/base/aliasTokens/interfaces';
-import { ColorToken } from 'theme/base/interfaces';
+import { NavTokenColor } from '@prisdom/theme/base/aliasTokens/interfaces';
+import { ColorToken } from '@prisdom/theme/base/interfaces';
 
 export const stylesComputed = (
   isDownTrend?: boolean,

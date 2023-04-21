@@ -1,7 +1,7 @@
-import { NavTokenColor } from 'theme/base/aliasTokens/interfaces';
-import { ExtendedColor } from 'theme/colors/interfaces';
+import { NavTokenColor } from '@prisdom/theme/base/aliasTokens/interfaces';
+import { ExtendedColor } from '@prisdom/theme/colors/interfaces';
 import { defineStyle } from '@chakra-ui/react';
-import { ColorToken } from 'theme/base/interfaces';
+import { ColorToken } from '@prisdom/theme/base/interfaces';
 
 const commonBtnStyle = {
   transition: 'all .2s',

@@ -1,11 +1,11 @@
 import {
   CourseIconOutlined,
   CourseIconFilled
-} from 'theme/icons/SVGs/course';
+} from '@prisdom/theme/icons/SVGs/course';
 import {
   ExploreIconFilled,
   ExploreIconOutlined
-} from 'theme/icons/SVGs/explore';
+} from '@prisdom/theme/icons/SVGs/explore';
 
 export const navList = [
   {

@@ -1,11 +1,11 @@
 import { navStyle } from './styles';
 import { Divider, Flex, Img } from '@chakra-ui/react';
-import DraggableIcon from 'theme/icons/SVGs/draggable';
-import Section from 'component-ui/factoryComponent/SectionFactory';
-import Nav from 'component-ui/factoryComponent/NavFactory';
-import LogoNav from 'theme/icons/Images/LogoNav.png';
-import NavSearchInput from 'component-ui/inputs/NavSearchInput.tsx';
-import PrisButton from 'component-ui/buttons/PrisButton';
+import DraggableIcon from '@prisdom/theme/icons/SVGs/draggable';
+import Section from '@prisdom/component-ui/src/factoryComponent/SectionFactory';
+import Nav from '@prisdom/component-ui/src/factoryComponent/NavFactory';
+import LogoNav from '@prisdom/theme/icons/Images/LogoNav.png';
+import NavSearchInput from '../../NavSearchInput.tsx';
+import PrisButton from '@prisdom/component-ui/src/buttons/PrisButton';
 import NotificationBell from 'layouts/navigations/TopNav/components/NotificationBell';
 import TopBarAvatar from './components/TopBarAvatar';
 

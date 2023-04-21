@@ -1,14 +1,17 @@
 import { Box, Divider, Flex, Text, VStack } from '@chakra-ui/react';
-import CollapsibleNavigation from 'component-ui/CollapsibleNavigation';
-import CollapsibleNavItem from 'component-ui/CollapsibleNavigation/CollapsibleNavItem';
-import { TextLayer } from 'theme/typography/interfaces';
+import CollapsibleNavigation from '@prisdom/component-ui/src/CollapsibleNavigation';
+import CollapsibleNavItem from '@prisdom/component-ui/src/CollapsibleNavigation/CollapsibleNavItem';
+import { TextLayer } from '@prisdom/theme/typography/interfaces';
 import { style } from './styles';
 import { navList } from './navList';
 import { useLocation } from 'react-router-dom';
-import BadgeInfo from 'component-ui/Badges/BadgeInfor';
+import BadgeInfo from '@prisdom/component-ui/src/Badges/BadgeInfor';
 import { config } from 'config/config.dev';
-import { ColorToken, TypoToken } from 'theme/base/interfaces';
-import TextButton from 'component-ui/buttons/TextButton';
+import {
+  ColorToken,
+  TypoToken
+} from '@prisdom/theme/base/interfaces';
+import TextButton from '@prisdom/component-ui/src/buttons/TextButton';
 
 interface ILeftNavProps {
   isLeftNavExpand: boolean;

@@ -88,7 +88,7 @@
     "yup": "^0.32.11"
   },
   "scripts": {
-    "prestart": "./pre-setup.sh",
+    "prestart": "bash ./pre-setup.sh",
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test --env=jsdom",

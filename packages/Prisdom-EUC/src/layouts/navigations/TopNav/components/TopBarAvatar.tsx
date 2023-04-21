@@ -4,10 +4,10 @@ import {
   useDisclosure,
   chakra
 } from '@chakra-ui/react';
-import { NavTokenColor } from 'theme/base/aliasTokens/interfaces';
-import { ExtendedColor } from 'theme/colors/interfaces';
+import { NavTokenColor } from '@prisdom/theme/base/aliasTokens/interfaces';
+import { ExtendedColor } from '@prisdom/theme/colors/interfaces';
 import ProfilePanel from './ProfilePanel';
-import BadgeInfo from 'component-ui/Badges/BadgeInfor';
+import BadgeInfo from '@prisdom/component-ui/src/Badges/BadgeInfor';
 import { styles } from './styles';
 
 export interface ITopBarNavProps {

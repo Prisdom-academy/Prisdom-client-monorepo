@@ -1,5 +1,5 @@
 import { Center, CenterProps, Text } from '@chakra-ui/react';
-import { TextLayer } from 'theme/typography/interfaces';
+import { TextLayer } from '@prisdom/theme/typography/interfaces';
 import { stylesComputed } from './styles';
 import { ProgressBar } from './ProgressBar';
 

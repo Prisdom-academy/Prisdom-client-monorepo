@@ -7,26 +7,26 @@ import {
   Text,
   VStack
 } from '@chakra-ui/react';
-import AssistedChip from 'component-ui/AssistedChip';
-import PrisButton from 'component-ui/buttons/PrisButton';
-import TextButton from 'component-ui/buttons/TextButton';
-import NotificationCardInfo from 'component-ui/Cards/NotificationCardInfo';
-import { PrisPopover } from 'component-ui/PrisPopover';
+import AssistedChip from '@prisdom/component-ui/src/AssistedChip';
+import PrisButton from '@prisdom/component-ui/src/buttons/PrisButton';
+import TextButton from '@prisdom/component-ui/src/buttons/TextButton';
+import NotificationCardInfo from '@prisdom/component-ui/src/Cards/NotificationCardInfo';
+import { PrisPopover } from '@prisdom/component-ui/src/PrisPopover';
 import useDraggableScroll from 'hooks/useDraggableScroll';
 import {
   INotification,
   NotificationCategoryEnum
 } from 'models/notification';
 import { useRef, useState } from 'react';
-import { TypoToken } from 'theme/base/interfaces';
+import { TypoToken } from '@prisdom/theme/base/interfaces';
 import {
   ArrowRightIconOutlined,
   ArrowLeftIconOutlined
-} from 'theme/icons/SVGs/arrow';
-import { ReadAllIconOutlined } from 'theme/icons/SVGs/readAll';
-import { TextLayer } from 'theme/typography/interfaces';
+} from '@prisdom/theme/icons/SVGs/arrow';
+import { ReadAllIconOutlined } from '@prisdom/theme/icons/SVGs/readAll';
+import { TextLayer } from '@prisdom/theme/typography/interfaces';
 import { styles } from './styles';
-import emptyStateImg from 'theme/icons/Images/illustrations/NotificationIllus.png';
+import emptyStateImg from '@prisdom/theme/icons/Images/illustrations/NotificationIllus.png';
 import { chipsArray } from '../staticData';
 
 interface INotificationPanelProps {
