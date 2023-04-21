@@ -1,5 +1,5 @@
-import { CSSObject } from "@emotion/react";
-import { FontFamily } from "../base/interfaces";
+import { CSSObject } from '@emotion/react';
+import { FontFamily } from '../base/interfaces';
 
 /**
  * @param fontSize px
@@ -15,11 +15,11 @@ function generateHeadingStyle(
 ): CSSObject {
   return {
     fontFamily: FontFamily.title,
-    color: "gray.900",
-    fontSize: (fontSize / 16).toFixed(1) + "rem",
+    color: 'gray.900',
+    fontSize: (fontSize / 16).toFixed(1) + 'rem',
     fontWeight,
-    lineHeight: (lineHeight / 16).toFixed(1) + "rem",
-    letterSpacing: !letter ? "normal" : letter / 100 + "rem",
+    lineHeight: (lineHeight / 16).toFixed(1) + 'rem',
+    letterSpacing: !letter ? 'normal' : letter / 100 + 'rem'
   };
 }
 
@@ -30,11 +30,11 @@ function generateContentStyle(
   letter = 0
 ): CSSObject {
   return {
-    color: "gray.900",
-    fontSize: (fontSize / 16).toFixed(1) + "rem",
+    color: 'gray.900',
+    fontSize: (fontSize / 16).toFixed(1) + 'rem',
     fontWeight,
-    lineHeight: (lineHeight / 16).toFixed(1) + "rem",
-    letterSpacing: !letter ? "normal" : letter / 100 + "rem",
+    lineHeight: (lineHeight / 16).toFixed(1) + 'rem',
+    letterSpacing: !letter ? 'normal' : letter / 100 + 'rem'
   };
 }
 
@@ -60,7 +60,7 @@ const large = {
   largeRegularX: generateHeadingStyle(24, 500, 32),
 
   largeBold: generateHeadingStyle(20, 600, 28),
-  largeRegular: generateHeadingStyle(20, 400, 28),
+  largeRegular: generateHeadingStyle(20, 400, 28)
 };
 
 const medium = {
@@ -72,24 +72,24 @@ const medium = {
 
   smallBoldNormal: generateContentStyle(14, 600, 24, 1),
   smallRegularNormal: generateContentStyle(14, 400, 24, 1),
-  smallLightNormal: generateContentStyle(14, 300, 24, 1),
+  smallLightNormal: generateContentStyle(14, 300, 24, 1)
 };
 
 const smallX = {
   smallBoldNormalX: generateContentStyle(12, 600, 20, 4),
   smallRegularNormalX: generateContentStyle(12, 400, 20, 4),
-  smallLightNormalX: generateContentStyle(12, 300, 20, 4),
+  smallLightNormalX: generateContentStyle(12, 300, 20, 4)
 };
 
 const small2X = {
   smallBoldNormal2X: generateContentStyle(11, 600, 20, 4),
   smallRegularNormal2X: generateContentStyle(11, 400, 20, 4),
-  smallLightNormal2X: generateContentStyle(11, 300, 20, 4),
+  smallLightNormal2X: generateContentStyle(11, 300, 20, 4)
 };
 
 export const textLayerStyle = {
   ...large,
   ...medium,
   ...smallX,
-  ...small2X,
+  ...small2X
 };

@@ -1,6 +1,6 @@
-import { defineStyle } from "@chakra-ui/react";
-import { NavTokenColor } from "@prisdom/theme/base/aliasTokens/interfaces";
-import { CollapsibleNavToken } from "@prisdom/theme/base/interfaces";
+import { defineStyle } from '@chakra-ui/react';
+import { NavTokenColor } from '@prisdom/theme/base/aliasTokens/interfaces';
+import { CollapsibleNavToken } from '@prisdom/theme/base/interfaces';
 
 const _activeStyle = defineStyle({
   _active: {
@@ -9,9 +9,9 @@ const _activeStyle = defineStyle({
     fill: CollapsibleNavToken.cpn_nav_ver_content_active,
 
     _hover: {
-      opacity: 0.64,
-    },
-  },
+      opacity: 0.64
+    }
+  }
 });
 
 export const styleGen = (
@@ -21,42 +21,42 @@ export const styleGen = (
 ) =>
   defineStyle({
     root: {
-      w: "100%",
+      w: '100%',
       color: CollapsibleNavToken.cpn_nav_ver_content_inactive,
       fill: CollapsibleNavToken.cpn_nav_ver_content_inactive,
-      p: ".75rem",
-      h: "3rem",
+      p: '.75rem',
+      h: '3rem',
 
       ...(isActive ? _activeStyle : {}),
 
       _hover: {
-        bgColor: CollapsibleNavToken.cpn_nav_ver_bg_inactive,
-      },
+        bgColor: CollapsibleNavToken.cpn_nav_ver_bg_inactive
+      }
     },
 
     icon: {
-      boxSize: "1.5rem",
-      mr: isMinimize ? 0 : ".7rem",
-      fill: "inherit",
+      boxSize: '1.5rem',
+      mr: isMinimize ? 0 : '.7rem',
+      fill: 'inherit'
     },
 
     arrow: {
-      boxSize: "1rem",
-      fill: "inherit",
-      transform: !isCollapse ? "rotate(90deg)" : "0deg",
-      transition: "all .3s",
+      boxSize: '1rem',
+      fill: 'inherit',
+      transform: !isCollapse ? 'rotate(90deg)' : '0deg',
+      transition: 'all .3s'
     },
 
     item: {
-      alignItems: "center",
-      w: "100%",
-      h: "2.6rem",
-      justifyContent: "flex-start",
-      pl: isActive ? ".85rem" : "",
+      alignItems: 'center',
+      w: '100%',
+      h: '2.6rem',
+      justifyContent: 'flex-start',
+      pl: isActive ? '.85rem' : '',
 
       _hover: {
-        border: "1px solid",
-        borderColor: NavTokenColor.alias_divider_1,
-      },
-    },
+        border: '1px solid',
+        borderColor: NavTokenColor.alias_divider_1
+      }
+    }
   });

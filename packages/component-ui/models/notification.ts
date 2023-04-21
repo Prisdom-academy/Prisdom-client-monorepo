@@ -7,7 +7,7 @@ export type NotificationTemplate = string;
 
 export enum NotificationCategoryEnum {
   NEW,
-  EARLIER,
+  EARLIER
 }
 
 export interface INotification {
@@ -18,7 +18,7 @@ export interface INotification {
   onApprove?: () => void;
   onDecline?: () => void;
   isShowActionButton?: boolean;
-  notificationState: "read" | "unread";
+  notificationState: 'read' | 'unread';
   createdAt: Date;
   category: NotificationCategoryEnum;
 }
