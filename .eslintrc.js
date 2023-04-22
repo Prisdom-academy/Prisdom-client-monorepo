@@ -28,7 +28,9 @@ module.exports = {
     'prefer-template': 'error',
     radix: 'error',
     'space-before-blocks': 'error',
-    'import/prefer-default-export': 'off'
+    'import/prefer-default-export': 'off',
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': 'error'
   },
   overrides: [
     {

@@ -8,6 +8,7 @@
     "start-app": "yarn workspace @prisdom/app run start",
     "build-app": "yarn workspace @prisdom/app build",
     "test-app": "yarn workspace @prisdom/app test",
+    "dev-gw": "yarn workspace @prisdom/gateway dev -p 4000",
     "prepare": "husky install",
     "prettier-write": "prettier --write \"./packages/**/*.ts\"  --ignore-unknown",
     "lint-staged": "lint-staged"
