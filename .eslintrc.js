@@ -24,7 +24,7 @@ module.exports = {
   rules: {
     'react-hooks/exhaustive-deps': 'error',
     'no-var': 'error',
-    'brace-style': 'error',
+    'brace-style': 'off',
     'prefer-template': 'error',
     radix: 'error',
     'space-before-blocks': 'error',
