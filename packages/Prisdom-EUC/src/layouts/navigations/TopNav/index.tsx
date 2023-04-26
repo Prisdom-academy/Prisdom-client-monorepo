@@ -4,10 +4,11 @@ import DraggableIcon from '@prisdom/theme/icons/SVGs/draggable';
 import Section from '@prisdom/component-ui/src/factoryComponent/SectionFactory';
 import Nav from '@prisdom/component-ui/src/factoryComponent/NavFactory';
 import LogoNav from '@prisdom/theme/icons/Images/LogoNav.png';
-import NavSearchInput from '../../NavSearchInput.tsx';
+import NavSearchInput from '@prisdom/component-ui/src/NavSearchInput';
 import PrisButton from '@prisdom/component-ui/src/buttons/PrisButton';
 import NotificationBell from 'layouts/navigations/TopNav/components/NotificationBell';
 import TopBarAvatar from './components/TopBarAvatar';
+import { myCoursesData, recentItemData } from 'data-test/dataSearch';
 
 interface ITopNavProps {
   userName: string;
@@ -29,7 +30,12 @@ const TopNav = (props: ITopNavProps) => {
   };
 
   const _renderCenterSection = () => {
-    return <NavSearchInput />;
+    return (
+      <NavSearchInput
+        recentData={recentItemData}
+        courseData={myCoursesData}
+      />
+    );
   };
 
   const _renderRightSection = () => {

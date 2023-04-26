@@ -26,5 +26,11 @@ export const typoDef = {
   },
   type_neutral_light: {
     default: ExtendedColor['darkLevel.500']
+  },
+  type_link_default: {
+    default: ExtendedColor['darkLevel.600']
+  },
+  type_link_hover: {
+    default: ExtendedColor['darkLevel.100']
   }
 };

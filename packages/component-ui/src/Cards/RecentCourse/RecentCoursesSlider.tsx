@@ -1,17 +1,18 @@
-import { Flex } from "@chakra-ui/react";
-import useDraggableScroll from "hooks/useDraggableScroll";
-import { useRef } from "react";
-import RecentCourse, { ICourseCardProps } from ".";
-import { styles } from "./styles";
+import { Flex } from '@chakra-ui/react';
+import useDraggableScroll from '@prisdom/component-ui/hooks/useDraggableScroll';
+import { useRef } from 'react';
+import RecentCourse, { ICourseCardProps } from '.';
+import { styles } from './styles';
 
 interface IRecentCoursesSliderProps {
   listItems: ICourseCardProps[];
   width?: number;
+  // eslint-disable-next-line no-undef
   cardItem?: JSX.Element;
 }
 
 const RecentCoursesSlider = (props: IRecentCoursesSliderProps) => {
-  const { listItems, width = "100%" } = props;
+  const { listItems, width = '100%' } = props;
   const sliderRef = useRef<HTMLDivElement>(null);
   const draggableScroll = useDraggableScroll(sliderRef);
 

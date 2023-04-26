@@ -12,7 +12,7 @@ import PrisButton from '@prisdom/component-ui/src/buttons/PrisButton';
 import TextButton from '@prisdom/component-ui/src/buttons/TextButton';
 import NotificationCardInfo from '@prisdom/component-ui/src/Cards/NotificationCardInfo';
 import { PrisPopover } from '@prisdom/component-ui/src/PrisPopover';
-import useDraggableScroll from 'hooks/useDraggableScroll';
+import useDraggableScroll from '@prisdom/component-ui/hooks/useDraggableScroll';
 import {
   INotification,
   NotificationCategoryEnum

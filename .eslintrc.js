@@ -30,7 +30,9 @@ module.exports = {
     'space-before-blocks': 'error',
     'import/prefer-default-export': 'off',
     'no-unused-vars': 'off',
-    '@typescript-eslint/no-unused-vars': 'error'
+    '@typescript-eslint/no-unused-vars': 'error',
+    'react/react-in-jsx-scope': 'off',
+    'react/no-children-prop': 'off'
   },
   overrides: [
     {

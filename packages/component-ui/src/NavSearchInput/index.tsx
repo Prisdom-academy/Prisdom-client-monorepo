@@ -1,29 +1,48 @@
 import {
   Box,
+  BoxProps,
   Flex,
   Input,
   InputGroup,
   InputLeftElement,
   InputRightElement,
   Text,
-  useDisclosure,
-} from "@chakra-ui/react";
-import { ChangeEvent, useRef, useState } from "react";
-import { NavTokenColor } from "@prisdom/theme/base/aliasTokens/interfaces";
-import { ExtendedColor } from "@prisdom/theme/colors/interfaces";
-import { SearchNormalIconOutlined } from "@prisdom/theme/icons/SVGs/searchNormal";
-import { TextLayer } from "@prisdom/theme/typography/interfaces";
-import SearchResult from "./SearchResult";
-import { styles } from "./style";
-import HotKeys from "react-hot-keys";
-import { TypoToken } from "@prisdom/theme/base/interfaces";
+  useDisclosure
+} from '@chakra-ui/react';
+import { ChangeEvent, useRef, useState } from 'react';
+import { NavTokenColor } from '@prisdom/theme/base/aliasTokens/interfaces';
+import { ExtendedColor } from '@prisdom/theme/colors/interfaces';
+import { SearchNormalIconOutlined } from '@prisdom/theme/icons/SVGs/searchNormal';
+import { TextLayer } from '@prisdom/theme/typography/interfaces';
+import SearchResult from './SearchResult';
+import { styles } from './style';
+import HotKeys from 'react-hot-keys';
+import { TypoToken } from '@prisdom/theme/base/interfaces';
 
 const DELAY_SEARCH_TIME = 2000; // 2 seconds
 
-const NavSearchInput = () => {
+export interface CourseModel {
+  imgUrl: string;
+  title: string;
+  timeByHour: number;
+}
+
+export interface RecentDataModel {
+  title: string;
+  timeByMinutes: number;
+  url: string;
+  type: any;
+}
+export interface INavSearchInputProps extends BoxProps {
+  recentData: RecentDataModel[];
+  courseData: CourseModel[];
+}
+
+const NavSearchInput = (props: INavSearchInputProps) => {
+  const { recentData, courseData, ...rest } = props;
   const { isOpen, onClose, onOpen } = useDisclosure();
   const [isSearching, setIsSearching] = useState(false);
-  const [val, setVal] = useState("");
+  const [val, setVal] = useState('');
   const _searchInputRef = useRef<HTMLInputElement>(null);
 
   const _renderShortcutIcon = () => {
@@ -39,6 +58,7 @@ const NavSearchInput = () => {
     );
   };
 
+  // eslint-disable-next-line no-undef
   let timeoutId: NodeJS.Timeout | null = null;
   const _onLazyChange = (e: ChangeEvent<HTMLInputElement>) => {
     setVal(e.currentTarget.value);
@@ -68,7 +88,7 @@ const NavSearchInput = () => {
 
   return (
     <HotKeys keyName="ctrl+/" onKeyDown={_onShortcut}>
-      <Box position={"relative"}>
+      <Box position={'relative'} {...rest}>
         <InputGroup>
           <InputLeftElement
             pointerEvents="none"
@@ -83,7 +103,7 @@ const NavSearchInput = () => {
             }
           />
           <Input
-            focusBorderColor={ExtendedColor["primary_dark.500"]}
+            focusBorderColor={ExtendedColor['primary_dark.500']}
             placeholder="Search"
             sx={styles.input}
             ref={_searchInputRef}
@@ -99,6 +119,8 @@ const NavSearchInput = () => {
           />
         </InputGroup>
         <SearchResult
+          courseData={courseData}
+          recentData={recentData}
           isShow={isOpen}
           inputRef={_searchInputRef}
           isSearching={isSearching}

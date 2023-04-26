@@ -152,7 +152,9 @@ export enum TypoToken {
   type_placeholder = 'type_placeholder',
   type_neutral_hard = 'type_neutral_hard',
   type_neutral_medium = 'type_neutral_medium',
-  type_neutral_light = 'type_neutral_light'
+  type_neutral_light = 'type_neutral_light',
+  type_link_default = 'type_link_default',
+  type_link_hover = 'type_link_hover'
 }
 
 export enum CollapsibleNavToken {

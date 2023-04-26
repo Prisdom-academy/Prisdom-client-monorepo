@@ -9,7 +9,6 @@ import TextButton from '@prisdom/component-ui/src/buttons/TextButton';
 import RecentCoursesSlider from '@prisdom/component-ui/src/Cards/RecentCourse/RecentCoursesSlider';
 import FilteredChip from '@prisdom/component-ui/src/FilterChip';
 import { PrisPopover } from '@prisdom/component-ui/src/PrisPopover';
-import { myCoursesData, recentItemData } from 'data-test/dataSearch';
 import { MutableRefObject } from 'react';
 import { ArticleIconOutlined } from '@prisdom/theme/icons/SVGs/article';
 import { CourseIconOutlined } from '@prisdom/theme/icons/SVGs/course';
@@ -19,7 +18,7 @@ import SearchItem, {
   SearchItemType
 } from './SearchComponents/SearchItem';
 import { styles } from './styles';
-
+import { CourseModel, RecentDataModel } from '..';
 interface ISearchResultProps {
   isShow: boolean;
   /**
@@ -28,10 +27,19 @@ interface ISearchResultProps {
   inputRef: MutableRefObject<HTMLInputElement | null>;
   isSearching: boolean;
   onClickOutside?(): void;
+  recentData: RecentDataModel[];
+  courseData: CourseModel[];
 }
 
 const SearchResult = (props: ISearchResultProps) => {
-  const { isShow, inputRef, isSearching, onClickOutside } = props;
+  const {
+    isShow,
+    inputRef,
+    isSearching,
+    onClickOutside,
+    recentData,
+    courseData
+  } = props;
   const _resultWidth = inputRef.current?.offsetWidth;
 
   const _renderFilterChips = () => {
@@ -80,11 +88,11 @@ const SearchResult = (props: ISearchResultProps) => {
           </Flex>
         )}
         <Flex flexDir={'column'} mt="1rem">
-          {recentItemData.map((item) => (
+          {recentData.map((item) => (
             <SearchItem
               title={item.title}
               timeByMinutes={item.timeByMinutes}
-              key={recentItemData.indexOf(item)}
+              key={recentData.indexOf(item)}
               imgUrl={item.url}
               type={item.type as SearchItemType}
             />
@@ -107,7 +115,7 @@ const SearchResult = (props: ISearchResultProps) => {
           <Text layerStyle={TextLayer.mediumBold}>My Courses</Text>
           <TextButton> More </TextButton>
         </Flex>
-        <RecentCoursesSlider listItems={myCoursesData} />
+        <RecentCoursesSlider listItems={courseData} />
       </Box>
     );
   };

@@ -43,6 +43,7 @@ const SearchItem = (props: ISearchItemProps) => {
         />
       );
     } else {
+      // eslint-disable-next-line no-undef
       let thumbnailIcon: JSX.Element | null = null;
       const defaultProps = {
         boxSize: '2rem',

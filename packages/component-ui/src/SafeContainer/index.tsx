@@ -1,12 +1,18 @@
-import { Box, BoxProps } from "@chakra-ui/react";
+import { Box, BoxProps } from '@chakra-ui/react';
 
-interface ISafeContainer extends BoxProps {}
+export interface ISafeContainer extends BoxProps {}
 
 const SafeContainer = (props: ISafeContainer) => {
-  const { children } = props;
+  const { children, ...rest } = props;
 
   return (
-    <Box maxW={"1200px"} m={".75rem auto"} id="SafeContainer" p="3">
+    <Box
+      maxW={'1200px'}
+      m={'.75rem auto'}
+      id="SafeContainer"
+      p="3"
+      {...rest}
+    >
       {children}
     </Box>
   );

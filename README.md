@@ -6,15 +6,17 @@
 
 ## Prisdom monorepos clientside architecture
 
-1. component-ui: a shared component library
-2. theme: system theme: [https://www.figma.com/files/team/1156515949250706142/Prisdom?fuid=903115735678343771]
+1. Component-ui: a shared component library
+2. Theme: prisdom theming system: [https://www.figma.com/files/team/1156515949250706142/Prisdom?fuid=903115735678343771]
 3. prisdom application (@prisdom/app): our main app
-4. prisdom landing and gateway (@prisdom/gateway)
+4. prisdom landing and gateway (@prisdom/gateway): prisdom gateway
 
 ## Setup and referenced resource
 
-[ESlint and prettier](https://dev.to/monfernape/enforce-husky-pre-commit-with-eslint-prettier-in-monorepo-55jc)
-[Setup monorepos ](https://jibin.tech/blog/monorepo-with-create-react-app/)
+1. Code styles setup: [ESlint and prettier](https://dev.to/monfernape/enforce-husky-pre-commit-with-eslint-prettier-in-monorepo-55jc)
+2. Monorepos setup: [Setup monorepos ](https://jibin.tech/blog/monorepo-with-create-react-app/)
+3. **@prisdom/app** state management using inversifyJS: [https://inversify.io/]
+4. Theming using chakraUI: [https://chakra-ui.com/]
 
 ## How to run:
 
