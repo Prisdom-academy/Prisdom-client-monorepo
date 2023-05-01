@@ -16,10 +16,10 @@ function generateHeadingStyle(
   return {
     fontFamily: FontFamily.title,
     color: 'gray.900',
-    fontSize: (fontSize / 16).toFixed(1) + 'rem',
+    fontSize: `${(fontSize / 16).toFixed(1)}rem`,
     fontWeight,
-    lineHeight: (lineHeight / 16).toFixed(1) + 'rem',
-    letterSpacing: !letter ? 'normal' : letter / 100 + 'rem'
+    lineHeight: `${(lineHeight / 16).toFixed(1)}rem`,
+    letterSpacing: !letter ? 'normal' : `${letter / 100}rem`
   };
 }
 
@@ -31,17 +31,17 @@ function generateContentStyle(
 ): CSSObject {
   return {
     color: 'gray.900',
-    fontSize: (fontSize / 16).toFixed(1) + 'rem',
+    fontSize: `${(fontSize / 16).toFixed(1)}rem`,
     fontWeight,
-    lineHeight: (lineHeight / 16).toFixed(1) + 'rem',
-    letterSpacing: !letter ? 'normal' : letter / 100 + 'rem'
+    lineHeight: `${(lineHeight / 16).toFixed(1)}rem`,
+    letterSpacing: !letter ? 'normal' : `${letter / 100}rem`
   };
 }
 
 const large = {
-  largeBold5X: generateHeadingStyle(72, 700, 100),
-  largeMedium5X: generateHeadingStyle(72, 600, 100),
-  largeRegular5X: generateHeadingStyle(72, 500, 100),
+  largeBold5X: generateHeadingStyle(72, 700, 82),
+  largeMedium5X: generateHeadingStyle(72, 600, 82),
+  largeRegular5X: generateHeadingStyle(72, 500, 82),
 
   largeBold4X: generateHeadingStyle(48, 700, 68, 1),
   largeMedium4X: generateHeadingStyle(48, 600, 68, 1),
@@ -65,7 +65,8 @@ const large = {
 
 const medium = {
   mediumBold: generateContentStyle(18, 600, 24),
-  regularBold: generateContentStyle(18, 400, 24),
+  mediumRegular: generateContentStyle(18, 400, 24),
+  regularBold: generateContentStyle(18, 400, 24, 2),
   baseBoldNormal: generateContentStyle(16, 600, 24, 1.5),
   baseRegularNormal: generateContentStyle(16, 400, 24, 1.5),
   baseLightNormal: generateContentStyle(16, 300, 24, 1.5),

@@ -1,10 +1,7 @@
 /** @type {import('next').NextConfig} */
-const withTM = require('next-transpile-modules')([
-  '@prisdom/theme',
-  '@prisdom/component-ui'
-]);
-const nextConfig = withTM({
-  reactStrictMode: true
-});
+const nextConfig = {
+  reactStrictMode: true,
+  transpilePackages: ['@prisdom/theme', '@prisdom/component-ui']
+};
 
 module.exports = nextConfig;

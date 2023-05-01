@@ -14,6 +14,7 @@ import { CheckboxStyles } from './components/CheckboxTheme';
 import { PrisButtonStyle } from '@prisdom/component-ui/src/buttons/PrisButton/styles';
 import { PrisButtonSecStyle } from '@prisdom/component-ui/src/buttons/PrisButtonSec/styles';
 import { TextButtonStyle } from '@prisdom/component-ui/src/buttons/TextButton/styles';
+import { inputTheme } from './components/InputTheme';
 
 export const chakraTheme = extendTheme({
   config: {
@@ -40,6 +41,7 @@ export const chakraTheme = extendTheme({
 
     Checkbox: CheckboxStyles,
     Radio: radioTheme,
-    Menu: MenuTheme
+    Menu: MenuTheme,
+    Input: inputTheme
   }
 });

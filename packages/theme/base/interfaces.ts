@@ -47,7 +47,8 @@ export enum ColorToken {
   global_dark_level_transparent_24 = 'global_dark_level_transparent_24',
   global_success_transparent_32 = 'global_success_transparent_32',
   global_error_transparent_16 = 'global_error_transparent_16',
-  global_error_transparent_32 = 'global_error_transparent_32'
+  global_error_transparent_32 = 'global_error_transparent_32',
+  global_dark_level_transparent_86 = 'global_dark_level_transparent_86'
 }
 
 export enum ShadowToken {
@@ -104,7 +105,8 @@ export enum ButtonTokenColor {
   cpn_txt_btn_danger_content_default = 'cpn_txt_btn_danger_content_default',
   cpn_txt_btn_danger_content_disable = 'cpn_txt_btn_danger_content_disable',
   cpn_txt_btn_secondary_background_hover = 'cpn_txt_btn_secondary_background_hover',
-  cpn_txt_btn_secondary_content_disable = 'cpn_txt_btn_secondary_content_disable'
+  cpn_txt_btn_secondary_content_disable = 'cpn_txt_btn_secondary_content_disable',
+  cpn_txt_btn_secondary_content_hover = 'cpn_txt_btn_secondary_content_hover'
 }
 
 export enum CheckBoxTokenColor {
@@ -112,7 +114,8 @@ export enum CheckBoxTokenColor {
   cpn_check_box_stroke_defaultHover = 'cpn_check_box_stroke_defaultHover',
   cpn_check_box_content_disable = 'cpn_check_box_content_disable',
   cpn_check_box_stroke_disable = 'cpn_check_box_stroke_disable',
-  cpn_check_box_bg_disable = 'cpn_check_box_bg_disable'
+  cpn_check_box_bg_disable = 'cpn_check_box_bg_disable',
+  cpn_check_box_stroke_default = 'cpn_check_box_stroke_default'
 }
 
 export enum BorderToken {

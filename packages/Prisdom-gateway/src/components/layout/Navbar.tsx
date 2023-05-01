@@ -40,6 +40,23 @@ const NavBar = (props: NavbarProps) => {
   const _isOnSigninPage = currentLocaltion === '/auth/signin';
   const _isOnSignupPage = currentLocaltion === '/auth/signup';
 
+  function _renderNavItem(item: { title: string; to: string }) {
+    return (
+      <Box key={item.title} mr="5">
+        <Link href={item.to} className="navItem">
+          <Text
+            as="h5"
+            layerStyle={TextLayer.smallBoldNormal}
+            color={TypoToken.type_link_default}
+            data-active={currentLocaltion === item.to}
+          >
+            {item.title}
+          </Text>
+        </Link>
+      </Box>
+    );
+  }
+
   return (
     <Flex sx={styles.root} as={'nav'} id="NavBar">
       <Image src={logo} alt={'Logo'} className="logoImage"></Image>
@@ -56,20 +73,7 @@ const NavBar = (props: NavbarProps) => {
       </Box>
       <Flex alignItems={'center'}>
         <Flex>
-          {navLinkItems.map((item) => (
-            <Box key={item.title} mr="7">
-              <Link href={item.to} className="navItem">
-                <Text
-                  as="h5"
-                  layerStyle={TextLayer.smallBoldNormal}
-                  color={TypoToken.type_link_default}
-                  data-active={currentLocaltion === item.to}
-                >
-                  {item.title}
-                </Text>
-              </Link>
-            </Box>
-          ))}
+          {navLinkItems.map((item) => _renderNavItem(item))}
         </Flex>
         <Divider variant={'v2'} h="1rem" orientation="vertical" />
         <Flex>

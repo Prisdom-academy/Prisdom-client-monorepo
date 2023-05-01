@@ -16,15 +16,12 @@ export const TextButtonStyle = defineStyleConfig({
       color: ButtonTokenColor.cpn_txt_btn_primary_content_default,
       fill: ButtonTokenColor.cpn_txt_btn_primary_content_default,
       _hover: {
-        backgroundColor:
-          ButtonTokenColor.cpn_txt_btn_primary_background_hover,
         color: ButtonTokenColor.cpn_txt_btn_primary_content_hover,
         fill: ButtonTokenColor.cpn_txt_btn_primary_content_hover
       },
       _disabled: {
         color: ButtonTokenColor.cpn_txt_btn_primary_content_disabled,
         fill: ButtonTokenColor.cpn_txt_btn_primary_content_disabled,
-        backgroundColor: 'transparent',
         cursor: 'not-allowed'
       }
     },
@@ -32,13 +29,12 @@ export const TextButtonStyle = defineStyleConfig({
       color: ButtonTokenColor.cpn_txt_btn_secondary_content_default,
       fill: ButtonTokenColor.cpn_txt_btn_secondary_content_default,
       _hover: {
-        backgroundColor:
-          ButtonTokenColor.cpn_txt_btn_secondary_background_hover
+        color: ButtonTokenColor.cpn_txt_btn_secondary_content_hover,
+        fill: ButtonTokenColor.cpn_txt_btn_secondary_content_hover
       },
       _disabled: {
         color: ButtonTokenColor.cpn_txt_btn_secondary_content_disable,
         fill: ButtonTokenColor.cpn_txt_btn_secondary_content_disable,
-        backgroundColor: 'transparent',
         cursor: 'not-allowed'
       }
     }

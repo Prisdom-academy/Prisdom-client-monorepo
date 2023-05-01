@@ -10,11 +10,13 @@ export const styles = defineStyle({
     h: '4.5rem',
     w: '100%',
     alignItems: 'center',
-    px: '1rem',
+    px: '1.8rem',
     justifyContent: 'space-between',
     pos: 'fixed',
     top: 0,
     left: 0,
+    backdropFilter: 'blur(7px)',
+    zIndex: 100,
 
     _after: {
       content: "''",

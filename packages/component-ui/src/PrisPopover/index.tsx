@@ -1,11 +1,10 @@
 import {
-  Collapse,
   Flex,
   SystemStyleObject,
-  useOutsideClick,
-} from "@chakra-ui/react";
-import { PropsWithChildren, useRef } from "react";
-import { styles } from "./styles";
+  useOutsideClick
+} from '@chakra-ui/react';
+import { PropsWithChildren, useRef } from 'react';
+import { styles } from './styles';
 
 interface IPrisPopoverProps extends PropsWithChildren<any> {
   isShow: boolean;
@@ -16,23 +15,33 @@ interface IPrisPopoverProps extends PropsWithChildren<any> {
 }
 
 export const PrisPopover = (props: IPrisPopoverProps) => {
-  const { isShow, sx = {}, children, onClickOutside, dataTestId, id } = props;
+  const {
+    isShow,
+    sx = {},
+    children,
+    onClickOutside,
+    dataTestId,
+    id
+  } = props;
 
   const panelRef = useRef(null);
   useOutsideClick({
     handler: onClickOutside,
-    ref: panelRef,
+    ref: panelRef
   });
 
   const sxStyle = {
     ...styles.root,
-    ...sx,
+    ...sx
   };
-  return (
-    <Collapse in={isShow} unmountOnExit>
-      <Flex data-testid={dataTestId} sx={sxStyle} ref={panelRef} id={id}>
-        {children}
-      </Flex>
-    </Collapse>
-  );
+  return isShow ? (
+    <Flex
+      data-testid={dataTestId}
+      sx={sxStyle}
+      ref={panelRef}
+      id={id}
+    >
+      {children}
+    </Flex>
+  ) : null;
 };

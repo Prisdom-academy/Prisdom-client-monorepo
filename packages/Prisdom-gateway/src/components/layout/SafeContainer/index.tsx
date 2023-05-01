@@ -3,5 +3,11 @@ import SafeContainer, {
 } from '@prisdom/component-ui/src/SafeContainer';
 
 export const NextSafeContainer = (props: ISafeContainer) => {
-  return <SafeContainer pt="5rem">{props.children}</SafeContainer>;
+  const { ...rest } = props;
+
+  return (
+    <SafeContainer mt="0" pt="5rem" {...rest}>
+      {props.children}
+    </SafeContainer>
+  );
 };

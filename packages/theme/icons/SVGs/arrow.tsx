@@ -20,6 +20,16 @@ export const ArrowLeftIconOutlined = createIcon({
   )
 });
 
+export const ArrowLeftIconFilled = createIcon({
+  displayName: 'ArrowLeftIconOutlined',
+  viewBox: '0 0 24 24',
+  path: (
+    <>
+      <path d="M12.9823 5.31975L9.77227 8.52975L7.80227 10.4897C6.97227 11.3197 6.97227 12.6697 7.80227 13.4997L12.9823 18.6797C13.6623 19.3597 14.8223 18.8697 14.8223 17.9197V6.07975C14.8223 5.11975 13.6623 4.63975 12.9823 5.31975Z" />
+    </>
+  )
+});
+
 export const IsMeArrowIcon = createIcon({
   displayName: 'IsMeArrowIcon',
   viewBox: '0 0 11 56',

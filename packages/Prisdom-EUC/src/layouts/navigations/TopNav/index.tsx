@@ -41,7 +41,7 @@ const TopNav = (props: ITopNavProps) => {
   const _renderRightSection = () => {
     return (
       <Flex alignItems={'center'}>
-        <PrisButton variant={'primary'} disabled>
+        <PrisButton variant={'primary'} isDisabled>
           Focus Now
         </PrisButton>
         <Divider

@@ -32,7 +32,8 @@ module.exports = {
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': 'error',
     'react/react-in-jsx-scope': 'off',
-    'react/no-children-prop': 'off'
+    'react/no-children-prop': 'off',
+    'prettier/prettier': 'warn'
   },
   overrides: [
     {

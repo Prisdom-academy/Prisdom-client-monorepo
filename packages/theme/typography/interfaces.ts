@@ -18,6 +18,7 @@ export enum TextLayer {
   largeRegular = 'largeRegular',
 
   mediumBold = 'mediumBold',
+  mediumRegular = 'mediumRegular',
   regularBold = 'regularBold',
   baseBoldNormal = 'baseBoldNormal',
   baseRegularNormal = 'baseRegularNormal',

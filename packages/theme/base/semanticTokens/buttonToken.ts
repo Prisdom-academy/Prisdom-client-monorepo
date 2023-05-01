@@ -67,6 +67,9 @@ const textButtons = {
   cpn_txt_btn_secondary_content_disable: {
     default: ExtendedColor['darkLevel.500']
   },
+  cpn_txt_btn_secondary_content_hover: {
+    default: ExtendedColor['darkLevel.500']
+  },
 
   cpn_txt_btn_danger_background_hover: {
     default: 'rgba(204, 63, 72, .18)'

@@ -4,9 +4,11 @@ import { createMultiStyleConfigHelpers } from '@chakra-ui/react';
 import {
   BorderToken,
   CheckBoxTokenColor,
-  ColorToken
+  ColorToken,
+  TypoToken
 } from '@prisdom/theme/base/interfaces';
 import { shadowsTokenDefinition } from '@prisdom/theme/base/semanticTokens/shadowsToken';
+import { TextLayer } from '../typography/interfaces';
 
 const { definePartsStyle, defineMultiStyleConfig } =
   createMultiStyleConfigHelpers(checkboxAnatomy.keys);
@@ -14,11 +16,14 @@ const { definePartsStyle, defineMultiStyleConfig } =
 const baseStyle = definePartsStyle({
   control: {
     bgColor: 'transparent',
+    border: '1px solid',
+    borderColor: CheckBoxTokenColor.cpn_check_box_stroke_default,
+    borderRadius: 4,
 
     _disabled: {
       bgColor:
-        CheckBoxTokenColor.cpn_check_box_bg_disable + ' !important',
-      border: BorderToken.cpn_check_box_stroke_disable + '!important',
+        `${CheckBoxTokenColor.cpn_check_box_bg_disable  } !important`,
+      border: `${BorderToken.cpn_check_box_stroke_disable  }!important`,
 
       '& svg': {
         color: CheckBoxTokenColor.cpn_check_box_content_disable
@@ -43,11 +48,13 @@ const baseStyle = definePartsStyle({
   },
 
   icon: {
-    color: 'white'
+    color: TypoToken.type_neutral_default
   },
 
   label: {
-    color: ColorToken.text_normal
+    color: ColorToken.text_normal,
+    layerStyle: TextLayer.smallRegularNormal,
+    ml: 3
   }
 });
 
