@@ -7,7 +7,6 @@ import {
   Text,
   VStack,
   Divider,
-  InputRightElement,
   Checkbox
 } from '@chakra-ui/react';
 import background from '@/images/hero-bg.jpg';
@@ -17,20 +16,16 @@ import { ArrowLeftIconFilled } from '@prisdom/theme/icons/SVGs/arrow';
 import { TextLayer } from '@prisdom/theme/typography/interfaces';
 import { TypoToken } from '@prisdom/theme/base/interfaces';
 import PlatformSigninButton from '@prisdom/component-ui/src/buttons/PlatformSigninButton';
-import TextInput, {
-  CustomIconRendererParams
-} from '@prisdom/component-ui/src/form/TextInput';
 import { signinStyle } from './styles/signinStyle';
-import CloseIcon from '@prisdom/theme/icons/SVGs/close';
-import {
-  EyeIconOutlined,
-  EyeSlashIconOutlined
-} from '@prisdom/theme/icons/SVGs/eye';
-import { Controller, SubmitHandler, useForm } from 'react-hook-form';
+import { SubmitHandler, useForm } from 'react-hook-form';
 import PrisButton from '@prisdom/component-ui/buttons/PrisButton';
+import { TextInputController } from '@prisdom/component-ui/form/FormControllers/TextInputController';
+import { PasswordInputController } from '@prisdom/component-ui/form/FormControllers/PasswordInputController';
 import { useState } from 'react';
 import Link from 'next/link';
 import Footer from '@/components/layout/Footer';
+import { signinSchema } from './_validationSchema';
+import { yupResolver } from '@hookform/resolvers/yup';
 
 interface IFormInput {
   email: string;
@@ -42,7 +37,8 @@ const Signin = () => {
     defaultValues: {
       email: '',
       password: ''
-    }
+    },
+    resolver: yupResolver(signinSchema)
   });
   const [passwordFieldType, setPasswordFieldType] = useState<
     'text' | 'password'
@@ -51,43 +47,6 @@ const Signin = () => {
   const _onSubmit: SubmitHandler<IFormInput> = (data) => {
     console.log(data);
   };
-
-  function _clearEmailIconRenderer({
-    isDirty
-  }: CustomIconRendererParams) {
-    return isDirty ? (
-      <InputRightElement
-        children={
-          <CloseIcon
-            sx={signinStyle.customIcon}
-            onClick={() => resetField('email')}
-          />
-        }
-      />
-    ) : null;
-  }
-
-  function _showPasswordIconRenderer({
-    isDirty
-  }: CustomIconRendererParams) {
-    return isDirty ? (
-      <InputRightElement
-        children={
-          passwordFieldType === 'password' ? (
-            <EyeIconOutlined
-              sx={signinStyle.customIcon}
-              onClick={() => setPasswordFieldType('text')}
-            />
-          ) : (
-            <EyeSlashIconOutlined
-              sx={signinStyle.customIcon}
-              onClick={() => setPasswordFieldType('password')}
-            />
-          )
-        }
-      />
-    ) : null;
-  }
 
   function _renderSigninForm() {
     return (
@@ -131,32 +90,26 @@ const Signin = () => {
           </Flex>
           <Box w="100%">
             <form onSubmit={handleSubmit(_onSubmit)}>
-              <Controller
-                name="email"
+              <TextInputController
                 control={control}
-                render={({ field, fieldState }) => (
-                  <TextInput
-                    label="Email"
-                    placeholder="youremail@example.com"
-                    customIconRenderer={_clearEmailIconRenderer}
-                    {...field}
-                    {...fieldState}
-                  />
-                )}
+                name={'email'}
+                label={'Email'}
+                onCustomIconClick={() => resetField('email')}
+                placeholder="your-email@example.com"
               />
-              <Controller
-                name="password"
+
+              <PasswordInputController
                 control={control}
-                render={({ field, fieldState }) => (
-                  <TextInput
-                    label="Password"
-                    fieldType={passwordFieldType}
-                    placeholder="Password@123456"
-                    customIconRenderer={_showPasswordIconRenderer}
-                    {...field}
-                    {...fieldState}
-                  />
-                )}
+                onHidePasswordClick={() =>
+                  setPasswordFieldType('password')
+                }
+                onShowPasswordClick={() =>
+                  setPasswordFieldType('text')
+                }
+                name="password"
+                label="Password"
+                fieldType={passwordFieldType}
+                placeholder="yourPassword@1234"
               />
 
               <Flex
@@ -219,7 +172,7 @@ const Signin = () => {
             </TextButton>
           </Box>
           <SimpleGrid
-            mt={{ base: '2rem', md: '3rem', xl: '6.7rem' }}
+            mt={{ base: '2rem', md: '3rem', xl: '4rem' }}
             columns={2}
             spacing={'2rem'}
           >

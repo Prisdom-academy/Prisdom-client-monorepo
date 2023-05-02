@@ -5,7 +5,7 @@ import { TypoToken } from '@prisdom/theme/base/interfaces';
 export const styles = defineStyle({
   input: {
     size: 'md',
-    minW: '35rem',
+    minW: 'min(35rem, calc(100vw - 55rem))',
     _placeholder: { color: TypoToken.type_placeholder },
     color: TypoToken.type_neutral_default
   },

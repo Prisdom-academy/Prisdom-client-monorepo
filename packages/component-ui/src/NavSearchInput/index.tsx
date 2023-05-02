@@ -19,6 +19,9 @@ import { styles } from './style';
 import HotKeys from 'react-hot-keys';
 import { TypoToken } from '@prisdom/theme/base/interfaces';
 
+// eslint-disable-next-line no-undef
+let timeoutId: NodeJS.Timeout | null = null;
+
 const DELAY_SEARCH_TIME = 2000; // 2 seconds
 
 export interface CourseModel {
@@ -58,10 +61,9 @@ const NavSearchInput = (props: INavSearchInputProps) => {
     );
   };
 
-  // eslint-disable-next-line no-undef
-  let timeoutId: NodeJS.Timeout | null = null;
   const _onLazyChange = (e: ChangeEvent<HTMLInputElement>) => {
     setVal(e.currentTarget.value);
+
     if (timeoutId) {
       clearTimeout(timeoutId);
     }
@@ -72,6 +74,7 @@ const NavSearchInput = (props: INavSearchInputProps) => {
         setIsSearching(true);
       }, DELAY_SEARCH_TIME);
     } else {
+      clearTimeout(timeoutId);
       setIsSearching(false);
     }
   };
