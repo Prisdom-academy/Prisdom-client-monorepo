@@ -37,12 +37,18 @@ export interface RecentDataModel {
   type: any;
 }
 export interface INavSearchInputProps extends BoxProps {
+  minWComputed?: string;
   recentData: RecentDataModel[];
   courseData: CourseModel[];
 }
 
 const NavSearchInput = (props: INavSearchInputProps) => {
-  const { recentData, courseData, ...rest } = props;
+  const {
+    recentData,
+    courseData,
+    minWComputed = 'min(35rem, calc(100vw - 55rem))',
+    ...rest
+  } = props;
   const { isOpen, onClose, onOpen } = useDisclosure();
   const [isSearching, setIsSearching] = useState(false);
   const [val, setVal] = useState('');
@@ -109,6 +115,7 @@ const NavSearchInput = (props: INavSearchInputProps) => {
             focusBorderColor={ExtendedColor['primary_dark.500']}
             placeholder="Search"
             sx={styles.input}
+            minW={minWComputed}
             ref={_searchInputRef}
             onChange={(e) => _onLazyChange(e)}
             onFocus={() => onOpen()}

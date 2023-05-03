@@ -22,8 +22,7 @@ export const signinStyle = defineStyle({
     backgroundSize: 'cover',
     backgroundPosition: 'middle',
     h: '100vh',
-    overflowY: 'auto',
-    pb: '1rem'
+    overflowY: 'auto'
   },
 
   customIcon: {

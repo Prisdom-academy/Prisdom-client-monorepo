@@ -3930,6 +3930,8 @@ __metadata:
     eslint: "npm:8.39.0"
     eslint-config-next: "npm:13.3.1"
     framer-motion: "npm:^10.12.4"
+    mobx: "npm:^6.9.0"
+    mobx-react-lite: "npm:^3.4.3"
     next: "npm:13.3.1"
     react: "npm:18.2.0"
     react-dom: "npm:18.2.0"
@@ -11476,6 +11478,28 @@ __metadata:
   bin:
     mkdirp: bin/cmd.js
   checksum: 8d9642f5caa481eaf1ec556a101c6a5b1528fa20067afd92115d053dc17043efc52c9b77ade0c0115bca4ebb74169e84cacc7f6004db3d1bd4171e131d512cc5
+  languageName: node
+  linkType: hard
+
+"mobx-react-lite@npm:^3.4.3":
+  version: 3.4.3
+  resolution: "mobx-react-lite@npm:3.4.3"
+  peerDependencies:
+    mobx: ^6.1.0
+    react: ^16.8.0 || ^17 || ^18
+  peerDependenciesMeta:
+    react-dom:
+      optional: true
+    react-native:
+      optional: true
+  checksum: d7291f504c95e4f83ffca732698c58ec1acee0fc882ffabade5ac29d2f04ff44fc5a027dd7787ebd5ca3be795cf19c5b43b715948d972b685adf89d8826ec1f6
+  languageName: node
+  linkType: hard
+
+"mobx@npm:^6.9.0":
+  version: 6.9.0
+  resolution: "mobx@npm:6.9.0"
+  checksum: 8e4899424940d3e0e46621ad003c4f629d981fc72873fe3cb2cd01e4e0359895a0ee9c78aa975981dec7e69977dd463b6f8c8c30303bb1169e3d42bec759a32f
   languageName: node
   linkType: hard
 

@@ -12,7 +12,6 @@ import {
 import background from '@/images/hero-bg.jpg';
 import { NextSafeContainer } from '@/components/layout/SafeContainer';
 import TextButton from '@prisdom/component-ui/buttons/TextButton';
-import { ArrowLeftIconFilled } from '@prisdom/theme/icons/SVGs/arrow';
 import { TextLayer } from '@prisdom/theme/typography/interfaces';
 import { TypoToken } from '@prisdom/theme/base/interfaces';
 import PlatformSigninButton from '@prisdom/component-ui/src/buttons/PlatformSigninButton';
@@ -26,6 +25,7 @@ import Link from 'next/link';
 import Footer from '@/components/layout/Footer';
 import { signinSchema } from './_validationSchema';
 import { yupResolver } from '@hookform/resolvers/yup';
+import TurnbackButton from '@/components/TurnbackButton';
 
 interface IFormInput {
   email: string;
@@ -125,7 +125,7 @@ const Signin = () => {
                     Save your password
                   </Text>
                 </Checkbox>
-                <Link href={'#'}>
+                <Link href={'/auth/forgotPassword/verifyEmail'}>
                   <TextButton>Forgot password?</TextButton>
                 </Link>
               </Flex>
@@ -147,14 +147,14 @@ const Signin = () => {
             <TextButton>Create an account!</TextButton>
           </Link>
         </Flex>
-        <Footer mt="10 !important" />
+        <Footer mt="4.3rem !important" />
       </VStack>
     );
   }
 
   return (
     <>
-      <PrisdomHead title="Prisdom - Signin" />
+      <PrisdomHead title="Signin" />
       <Box
         sx={signinStyle.backgroundBox}
         bgImage={background.src}
@@ -162,14 +162,7 @@ const Signin = () => {
       >
         <NextSafeContainer>
           <Box mt="8">
-            <TextButton variant={'secondary'}>
-              <ArrowLeftIconFilled
-                boxSize="5"
-                fill="inherit"
-                mr="2"
-              />
-              Turn back
-            </TextButton>
+            <TurnbackButton />
           </Box>
           <SimpleGrid
             mt={{ base: '2rem', md: '3rem', xl: '4rem' }}

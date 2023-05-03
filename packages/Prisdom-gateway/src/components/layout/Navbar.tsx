@@ -57,6 +57,12 @@ const NavBar = (props: NavbarProps) => {
     );
   }
 
+  function _minWidthSearchComputed() {
+    if (!/auth\/(signin|signup)/.test(currentLocaltion)) {
+      return 'min(35rem, calc(100vw - 65rem))';
+    }
+  }
+
   return (
     <Flex sx={styles.root} as={'nav'} id="NavBar">
       <Image src={logo} alt={'Logo'} className="logoImage"></Image>
@@ -69,6 +75,7 @@ const NavBar = (props: NavbarProps) => {
         <NavSearchInput
           recentData={recentItemData}
           courseData={myCoursesData}
+          minWComputed={_minWidthSearchComputed()}
         />
       </Box>
       <Flex alignItems={'center'}>

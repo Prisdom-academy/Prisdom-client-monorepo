@@ -26,15 +26,17 @@ export const PrisButtonStyle = defineStyleConfig({
       backgroundColor:
         ButtonTokenColor.cpn_btn_primary_background_default,
       color: 'white',
+      fill: 'white',
 
       _hover: {
         bg: ButtonTokenColor.cpn_btn_primary_background_hover
       },
       _loading: {
         bg:
-          ButtonTokenColor.cpn_btn_primary_background_loading +
-          ' !important',
-        color: 'white !important'
+          `${ButtonTokenColor.cpn_btn_primary_background_loading 
+          } !important`,
+        color: 'white !important',
+        fill: 'white !important'
       },
       _focus: {
         bg: ButtonTokenColor.cpn_btn_primary_background_focus,
@@ -44,6 +46,7 @@ export const PrisButtonStyle = defineStyleConfig({
       _disabled: {
         bg: 'white',
         color: ButtonTokenColor.cpn_btn_primary_content_disable,
+        fill: ButtonTokenColor.cpn_btn_primary_content_disable,
         cursor: 'not-allowed'
       }
     },
@@ -58,11 +61,11 @@ export const PrisButtonStyle = defineStyleConfig({
       },
       _loading: {
         bg:
-          ButtonTokenColor.cpn_btn_neutral_background_loading +
-          ' !important',
+          `${ButtonTokenColor.cpn_btn_neutral_background_loading 
+          } !important`,
         fill:
-          ButtonTokenColor.cpn_btn_neutral_background_loading +
-          ' !important'
+          `${ButtonTokenColor.cpn_btn_neutral_background_loading 
+          } !important`
       },
       _focus: {
         bg: ButtonTokenColor.cpn_btn_neutral_background_hover,
