@@ -1,6 +1,5 @@
 import { AuthStore, IAuthHydriatedData } from './auth/index';
 import { IHydatable } from './interfaces';
-
 export interface RootStoreHydrateData {
   authStore: IAuthHydriatedData;
 }

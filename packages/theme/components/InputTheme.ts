@@ -6,7 +6,7 @@ import { NavTokenColor } from '../base/aliasTokens/interfaces';
 const { definePartsStyle, defineMultiStyleConfig } =
   createMultiStyleConfigHelpers(inputAnatomy.keys);
 
-const baseStyle = definePartsStyle({
+export const baseStyle = definePartsStyle({
   // define the part you're going to style
   field: {
     color: TypoToken.type_neutral_default,

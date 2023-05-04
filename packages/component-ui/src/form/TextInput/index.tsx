@@ -16,10 +16,7 @@ import {
   FormStatusAttention,
   FormStatusSuccess
 } from '@prisdom/theme/icons/SVGs/formStatus';
-import {
-  ControllerFieldState,
-  ControllerRenderProps
-} from 'react-hook-form';
+import { ControllerFieldProps } from '../FormControllers/additions/interfaces';
 
 export interface CustomIconRendererParams {
   fieldType: 'text' | 'password';
@@ -44,9 +41,7 @@ export interface ITextInputProps extends InputProps {
 }
 
 const TextInput = forwardRef(function TextInput(
-  props: ITextInputProps &
-    Partial<ControllerRenderProps> &
-    Partial<ControllerFieldState>,
+  props: ITextInputProps & ControllerFieldProps,
   ref
 ) {
   const {

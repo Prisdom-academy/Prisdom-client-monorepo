@@ -1,8 +1,8 @@
 import { InputRightElement } from '@chakra-ui/react';
 import { Controller } from 'react-hook-form';
 import TextInput, { CustomIconRendererParams } from '../TextInput';
-import { IControllerBase } from './interfaces';
-import { styles } from './styles';
+import { IControllerBase } from './additions/interfaces';
+import { styles } from './additions/styles';
 import {
   EyeIconOutlined,
   EyeSlashIconOutlined

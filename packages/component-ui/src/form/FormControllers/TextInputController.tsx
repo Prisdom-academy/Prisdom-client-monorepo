@@ -2,8 +2,8 @@ import { InputRightElement } from '@chakra-ui/react';
 import CloseIcon from '@prisdom/theme/icons/SVGs/close';
 import { Controller } from 'react-hook-form';
 import TextInput, { CustomIconRendererParams } from '../TextInput';
-import { IControllerBase } from './interfaces';
-import { styles } from './styles';
+import { IControllerBase } from './additions/interfaces';
+import { styles } from './additions/styles';
 
 interface ITextInputController extends IControllerBase {
   onCustomIconClick(): void;

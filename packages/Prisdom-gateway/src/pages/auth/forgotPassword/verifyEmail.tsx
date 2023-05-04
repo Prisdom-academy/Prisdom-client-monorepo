@@ -11,7 +11,6 @@ import TurnbackButton from '@/components/TurnbackButton';
 import Footer from '@/components/layout/Footer';
 import { useGetStore } from '@/store/StoreProvider';
 import { useRouter } from 'next/router';
-import Link from 'next/link';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { sendEmailSchema } from '../_validationSchema';
 
@@ -73,9 +72,6 @@ const VerifyEmail = () => {
                     Get a verification code
                   </Text>
                 </PrisButton>
-                <Link href="/auth/forgotPassword/verifyPin">
-                  TEST
-                </Link>
               </chakra.form>
             </Flex>
             <Footer mt="auto" />

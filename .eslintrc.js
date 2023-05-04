@@ -5,6 +5,10 @@ module.exports = {
     jest: true,
     node: true
   },
+  globals: {
+    NodeJS: true,
+    JSX: true
+  },
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
