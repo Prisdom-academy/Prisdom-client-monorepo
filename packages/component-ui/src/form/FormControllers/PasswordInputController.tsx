@@ -7,11 +7,14 @@ import {
   EyeIconOutlined,
   EyeSlashIconOutlined
 } from '@prisdom/theme/icons/SVGs/eye';
+import '../form.css';
+import { useState } from 'react';
 
 interface IPasswordControllerProps extends IControllerBase {
-  fieldType: 'text' | 'password';
-  onShowPasswordClick(): void;
-  onHidePasswordClick(): void;
+  onShowPasswordClick?(): void;
+  onHidePasswordClick?(): void;
+  onChange?(): void;
+  successMsg?: string;
 }
 
 export const PasswordInputController = (
@@ -22,10 +25,25 @@ export const PasswordInputController = (
     control,
     placeholder,
     label,
-    fieldType,
     onShowPasswordClick,
-    onHidePasswordClick
+    onHidePasswordClick,
+    onChange,
+    successMsg
   } = props;
+
+  const [fieldType, setFieldType] = useState<'text' | 'password'>(
+    'password'
+  );
+
+  function _showPasswordClick() {
+    setFieldType('text');
+    onShowPasswordClick?.();
+  }
+
+  function _hidePasswordClick() {
+    setFieldType('password');
+    onHidePasswordClick?.();
+  }
 
   function _showPasswordIconRenderer({
     isDirty
@@ -36,12 +54,12 @@ export const PasswordInputController = (
           fieldType === 'password' ? (
             <EyeIconOutlined
               sx={styles.customIcon}
-              onClick={onShowPasswordClick}
+              onClick={_showPasswordClick}
             />
           ) : (
             <EyeSlashIconOutlined
               sx={styles.customIcon}
-              onClick={onHidePasswordClick}
+              onClick={_hidePasswordClick}
             />
           )
         }
@@ -53,18 +71,28 @@ export const PasswordInputController = (
     <Controller
       name={name}
       control={control}
-      render={({ field, fieldState }) => (
-        <TextInput
-          label={label}
-          fieldType={fieldType}
-          placeholder={placeholder}
-          customIconRenderer={_showPasswordIconRenderer}
-          isInvalid={fieldState.invalid}
-          errorMsg={fieldState.error?.message}
-          {...field}
-          {...fieldState}
-        />
-      )}
+      render={({ field, fieldState, formState }) => {
+        const { invalid, error, isDirty } = fieldState;
+
+        const showSuccessState =
+          formState.isValid && isDirty && !invalid && !!successMsg;
+
+        return (
+          <TextInput
+            label={label}
+            fieldType={fieldType}
+            placeholder={placeholder}
+            customIconRenderer={_showPasswordIconRenderer}
+            isInvalid={invalid}
+            errorMsg={error?.message}
+            isSuccess={showSuccessState}
+            successMsg={successMsg}
+            onChange={onChange}
+            {...field}
+            {...fieldState}
+          />
+        );
+      }}
     />
   );
 };

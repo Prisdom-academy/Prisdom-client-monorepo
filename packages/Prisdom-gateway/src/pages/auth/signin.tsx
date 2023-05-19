@@ -6,7 +6,6 @@ import {
   SimpleGrid,
   Text,
   VStack,
-  Divider,
   Checkbox
 } from '@chakra-ui/react';
 import background from '@/images/hero-bg.jpg';
@@ -20,12 +19,12 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import PrisButton from '@prisdom/component-ui/buttons/PrisButton';
 import { TextInputController } from '@prisdom/component-ui/form/FormControllers/TextInputController';
 import { PasswordInputController } from '@prisdom/component-ui/form/FormControllers/PasswordInputController';
-import { useState } from 'react';
 import Link from 'next/link';
 import Footer from '@/components/layout/Footer';
 import { signinSchema } from './_validationSchema';
 import { yupResolver } from '@hookform/resolvers/yup';
 import TurnbackButton from '@/components/TurnbackButton';
+import TextDivider from '@/components/TextDivider';
 
 interface IFormInput {
   email: string;
@@ -40,9 +39,6 @@ const Signin = () => {
     },
     resolver: yupResolver(signinSchema)
   });
-  const [passwordFieldType, setPasswordFieldType] = useState<
-    'text' | 'password'
-  >('password');
 
   const _onSubmit: SubmitHandler<IFormInput> = (data) => {
     console.log(data);
@@ -77,17 +73,7 @@ const Signin = () => {
           >
             We won&apos; share your information without permission
           </Text>
-          <Flex w="100%" alignItems={'center'} my="4 !important">
-            <Divider />
-            <Text
-              mx="3"
-              layerStyle={TextLayer.smallRegularNormal}
-              color={TypoToken.type_neutral_light}
-            >
-              Or
-            </Text>
-            <Divider />
-          </Flex>
+          <TextDivider title="Or" />
           <Box w="100%">
             <form onSubmit={handleSubmit(_onSubmit)}>
               <TextInputController
@@ -100,15 +86,8 @@ const Signin = () => {
 
               <PasswordInputController
                 control={control}
-                onHidePasswordClick={() =>
-                  setPasswordFieldType('password')
-                }
-                onShowPasswordClick={() =>
-                  setPasswordFieldType('text')
-                }
                 name="password"
                 label="Password"
-                fieldType={passwordFieldType}
                 placeholder="yourPassword@1234"
               />
 

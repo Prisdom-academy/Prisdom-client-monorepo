@@ -35,6 +35,7 @@ const VerifyPin = () => {
 
   const _onSubmit = (data: IFormInput) => {
     console.log('DTA', data);
+    router.push('./resetPassword');
   };
 
   const email = authStore.verifyingEmail;
@@ -44,11 +45,12 @@ const VerifyPin = () => {
 
   useEffect(() => {
     if (!email) {
-      router.push('/auth/forgotPassword/verifyEmail');
+      router.push('./verifyEmail');
     }
     if (timeRemainingState === TIME_TO_RESEND && !timer) {
       _countingTime();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [email, timeRemainingState]);
 
   function _countingTime() {

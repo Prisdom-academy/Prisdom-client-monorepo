@@ -11,7 +11,11 @@ export const commonAuthStyles = defineStyle({
     borderRadius: '12',
     align: 'center',
     flexDir: 'column',
-    mt: { base: '4rem', xl: '8rem' }
+    mt: { base: '4rem', xl: '6rem' },
+
+    '&.passwordBox': {
+      mt: { base: '1rem', xl: '.5rem' }
+    }
   },
 
   title: {

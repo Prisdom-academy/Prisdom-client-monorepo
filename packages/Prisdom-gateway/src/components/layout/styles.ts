@@ -15,7 +15,7 @@ export const styles = defineStyle({
     pos: 'fixed',
     top: 0,
     left: 0,
-    backdropFilter: 'blur(7px)',
+    backdropFilter: 'blur(5px)',
     zIndex: 100,
 
     _after: {

@@ -56,6 +56,7 @@ const TextInput = forwardRef(function TextInput(
     customIconRenderer,
     isDirty,
     invalid,
+    onChange,
     isTouched,
     ...rest
   } = props;
@@ -103,6 +104,7 @@ const TextInput = forwardRef(function TextInput(
           w="100%"
           isInvalid={isInvalid}
           data-success={isSuccess}
+          onChange={onChange}
           ref={ref}
           {...rest}
         />
