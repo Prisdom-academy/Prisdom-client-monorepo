@@ -40,6 +40,8 @@ export enum ColorToken {
   global_white_16 = 'global_white_16',
 
   global_dark_level_transparent_56 = 'global_dark_level_transparent_56',
+  global_dark_level_transparent_48 = 'global_dark_level_transparent_48',
+  global_dark_level_transparent_32 = 'global_dark_level_transparent_32',
   fake_shadow_background_info = 'fake_shadow_background_info',
   global_success_transparent_16 = 'global_success_transparent_16',
   global_warning_transparent_16 = 'global_warning_transparent_16',

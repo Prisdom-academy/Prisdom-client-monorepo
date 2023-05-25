@@ -10,8 +10,14 @@ interface ITextInputController extends IControllerBase {
 }
 
 export const TextInputController = (props: ITextInputController) => {
-  const { name, control, placeholder, label, onCustomIconClick } =
-    props;
+  const {
+    name,
+    control,
+    placeholder,
+    label,
+    onCustomIconClick,
+    className
+  } = props;
 
   function _clearEmailIconRenderer({
     isDirty
@@ -38,6 +44,7 @@ export const TextInputController = (props: ITextInputController) => {
           customIconRenderer={_clearEmailIconRenderer}
           errorMsg={fieldState.error?.message}
           isInvalid={fieldState.invalid}
+          className={className}
           {...field}
           {...fieldState}
         />

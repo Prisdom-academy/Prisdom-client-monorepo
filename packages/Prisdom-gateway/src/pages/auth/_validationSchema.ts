@@ -31,3 +31,15 @@ export const resetPasswordSchema = yup.object({
     .string()
     .oneOf([yup.ref('password')], 'Confirm password must be the same')
 });
+
+export const signupSchema = yup.object({
+  name: yup.string().required().max(50),
+  email: yup.string().email().required(),
+  password: yup
+    .string()
+    .required('Password is a required field.')
+    .passwordStrong('Your password is too weak'),
+  confirmPassword: yup
+    .string()
+    .oneOf([yup.ref('password')], 'Confirm password must be the same')
+});

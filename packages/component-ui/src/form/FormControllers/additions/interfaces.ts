@@ -10,6 +10,7 @@ export interface IControllerBase {
   label: string;
   placeholder?: string;
   errorMsg?: string;
+  className?: string;
 }
 
 export type ControllerFieldProps = Partial<ControllerRenderProps> &

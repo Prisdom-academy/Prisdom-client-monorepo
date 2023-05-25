@@ -23,4 +23,9 @@ export class AuthStore implements IHydatable<IAuthHydriatedData> {
   setVerifyingEmail(email: string) {
     this.verifyingEmail = email;
   }
+
+  @action
+  removeCurrentEmail() {
+    this.verifyingEmail = '';
+  }
 }

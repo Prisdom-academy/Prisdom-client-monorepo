@@ -15,6 +15,10 @@ interface IPasswordControllerProps extends IControllerBase {
   onHidePasswordClick?(): void;
   onChange?(): void;
   successMsg?: string;
+  /**
+   * Only use if you need this controller works as a confirmed password
+   */
+  originalPassword?: string;
 }
 
 export const PasswordInputController = (
@@ -28,7 +32,9 @@ export const PasswordInputController = (
     onShowPasswordClick,
     onHidePasswordClick,
     onChange,
-    successMsg
+    successMsg,
+    className,
+    originalPassword
   } = props;
 
   const [fieldType, setFieldType] = useState<'text' | 'password'>(
@@ -71,11 +77,14 @@ export const PasswordInputController = (
     <Controller
       name={name}
       control={control}
-      render={({ field, fieldState, formState }) => {
+      render={({ field, fieldState }) => {
         const { invalid, error, isDirty } = fieldState;
 
         const showSuccessState =
-          formState.isValid && isDirty && !invalid && !!successMsg;
+          originalPassword === field.value &&
+          isDirty &&
+          !invalid &&
+          !!successMsg;
 
         return (
           <TextInput
@@ -88,6 +97,7 @@ export const PasswordInputController = (
             isSuccess={showSuccessState}
             successMsg={successMsg}
             onChange={onChange}
+            className={className}
             {...field}
             {...fieldState}
           />

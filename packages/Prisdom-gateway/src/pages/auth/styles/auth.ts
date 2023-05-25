@@ -18,6 +18,20 @@ export const commonAuthStyles = defineStyle({
     }
   },
 
+  signupBox: {
+    w: '37.75rem',
+    bgColor: NavTokenColor.alias_neutral_bg_2,
+    p: '8',
+    borderRadius: '12',
+    align: 'center',
+    flexDir: 'column',
+    mt: { base: '1rem', xl: '.5rem' },
+
+    '.passwordField': {
+      width: '48%'
+    }
+  },
+
   title: {
     layerStyle: TextLayer.largeBold3X,
     color: TypoToken.type_neutral_medium,

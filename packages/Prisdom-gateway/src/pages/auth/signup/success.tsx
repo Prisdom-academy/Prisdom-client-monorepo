@@ -10,18 +10,17 @@ import TextDivider from '@/components/TextDivider';
 import PrisButton from '@prisdom/component-ui/buttons/PrisButton';
 import { useRouter } from 'next/router';
 import { useGetStore } from '@/store/StoreProvider';
-import { useRedirectWithourEmail } from './hooks/useRedirectWithoutEmail';
-import { useAutoRedirect } from './hooks/useAutoRedirect';
+import { useAutoRedirect } from '../forgotPassword/hooks/useAutoRedirect';
 
 const Success = () => {
   let time = 20;
   const router = useRouter();
   const { authStore } = useGetStore();
-  useRedirectWithourEmail('/auth/signin');
   const { autoMoveTime } = useAutoRedirect(_returnSignin, time);
 
   function _returnSignin() {
-    router.push('/auth/signin');
+    // TODO: need to redirect to app instead of /about
+    router.push('/about');
     authStore.removeCurrentEmail();
   }
   return (
@@ -43,7 +42,7 @@ const Success = () => {
                 layerStyle={TextLayer.largeBold3X}
                 color={TypoToken.type_neutral_medium}
               >
-                Reset password successfully
+                Create account successfully
               </Text>
               <Text
                 layerStyle={TextLayer.baseRegularNormal}
@@ -55,7 +54,7 @@ const Success = () => {
             </Flex>
             <TextDivider title="Or" my="8" />
             <PrisButton w="100%" h="3rem" onClick={_returnSignin}>
-              Sign in now
+              Learn now
             </PrisButton>
           </Center>
         </NextSafeContainer>

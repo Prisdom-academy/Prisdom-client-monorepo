@@ -158,6 +158,12 @@ const transparent = {
   global_dark_level_transparent_86: {
     default: 'rgba(22,28,36,.86)'
   },
+  global_dark_level_transparent_48: {
+    default: 'rgba(22,28,36,.48)'
+  },
+  global_dark_level_transparent_32: {
+    default: 'rgba(22,28,36,.32)'
+  },
   fake_shadow_background_info: {
     default: 'rgba(51, 102, 255, 0.24)'
   },

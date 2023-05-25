@@ -12,12 +12,13 @@ import { TextLayer } from '@prisdom/theme/typography/interfaces';
 interface EvaluatorProps {
   password: string;
   isShowHint?: boolean;
+  singleBarWidth?: string | number;
 }
 
 const list = [1, 2, 3, 4];
 
 const PasswordEvaluator = (props: EvaluatorProps) => {
-  const { password, isShowHint = true } = props;
+  const { password, isShowHint = true, singleBarWidth } = props;
   const [evaPoint, setEvaPoint] = useState(1);
 
   function _computeActiveColorAndText() {
@@ -57,6 +58,7 @@ const PasswordEvaluator = (props: EvaluatorProps) => {
         <Box
           key={item}
           sx={styles.bar}
+          w={singleBarWidth}
           bgColor={index < evaPoint - 1 ? activeColor : normalColor}
         />
       );
@@ -65,14 +67,24 @@ const PasswordEvaluator = (props: EvaluatorProps) => {
 
   return (
     <Box>
-      <Flex align={'center'} justifyContent={'space-between'}>
-        <HStack>{_renderEvaluator()}</HStack>
-        <Text
-          layerStyle={TextLayer.smallBoldNormal}
-          color={activeColor}
-        >
-          {evaText}
-        </Text>
+      <Flex
+        align={'center'}
+        justifyContent={'space-between'}
+        h="2rem"
+      >
+        <HStack flex="2" mr="9">
+          {_renderEvaluator()}
+        </HStack>
+        {evaPoint >= 1 && (
+          <Box>
+            <Text
+              layerStyle={TextLayer.smallBoldNormal}
+              color={activeColor}
+            >
+              {evaText}
+            </Text>
+          </Box>
+        )}
       </Flex>
       {isShowHint && (
         <Text color={TypoToken.type_neutral_default} mt={4}>

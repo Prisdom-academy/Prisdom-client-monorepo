@@ -122,7 +122,7 @@ const Signin = () => {
           >
             Don&apos;t have account?
           </Text>
-          <Link href={'#'}>
+          <Link href={'/auth/signup'}>
             <TextButton>Create an account!</TextButton>
           </Link>
         </Flex>

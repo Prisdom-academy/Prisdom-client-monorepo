@@ -4,7 +4,7 @@ export const styles = defineStyle({
   root: {},
   bar: {
     height: 2,
-    w: '3.5rem',
+    minW: '3.5rem',
     borderRadius: '10rem'
   }
 });

@@ -34,6 +34,7 @@ export interface ITextInputProps extends InputProps {
   successMsg?: string;
   fieldType?: 'text' | 'password';
   label: string;
+  className?: string;
 
   customIconRenderer?(
     params: CustomIconRendererParams
@@ -58,6 +59,7 @@ const TextInput = forwardRef(function TextInput(
     invalid,
     onChange,
     isTouched,
+    className,
     ...rest
   } = props;
 
@@ -94,7 +96,7 @@ const TextInput = forwardRef(function TextInput(
   }
 
   return (
-    <Box id={`FORM-${formName}`} mb="6">
+    <Box id={`FORM-${formName}`} mb="6" className={className}>
       <Label>{label}</Label>
       <InputGroup>
         <Input

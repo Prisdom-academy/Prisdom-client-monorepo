@@ -4,7 +4,6 @@ import { Box, Center, Flex, Text } from '@chakra-ui/react';
 import { commonAuthStyles } from '../styles/auth';
 import TurnbackButton from '@/components/TurnbackButton';
 import Footer from '@/components/layout/Footer';
-import { useGetStore } from '@/store/StoreProvider';
 import { TextLayer } from '@prisdom/theme/typography/interfaces';
 import TextButton from '@prisdom/component-ui/buttons/TextButton';
 import { RotateLeftIcon } from '@prisdom/theme/icons/SVGs/rotate';
@@ -17,6 +16,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { pinValidationSchema } from '../_validationSchema';
 import { PinInputController } from '@prisdom/component-ui/form/FormControllers/PinInputController';
+import { useRedirectWithourEmail } from './hooks/useRedirectWithoutEmail';
 
 interface IFormInput {
   pin: string;
@@ -25,9 +25,10 @@ interface IFormInput {
 const TIME_TO_RESEND = config.TIME_TO_SEND || 20;
 const VerifyPin = () => {
   const router = useRouter();
-  const { authStore } = useGetStore();
+  const { email } = useRedirectWithourEmail();
   const [timeRemainingState, setTimeRemainingState] =
     useState(TIME_TO_RESEND);
+
   const { control, handleSubmit } = useForm<IFormInput>({
     defaultValues: { pin: '' },
     resolver: yupResolver(pinValidationSchema)
@@ -38,20 +39,14 @@ const VerifyPin = () => {
     router.push('./resetPassword');
   };
 
-  const email = authStore.verifyingEmail;
-
   let remainingSeconds = TIME_TO_RESEND;
   let timer: NodeJS.Timer;
 
   useEffect(() => {
-    if (!email) {
-      router.push('./verifyEmail');
-    }
     if (timeRemainingState === TIME_TO_RESEND && !timer) {
       _countingTime();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [email, timeRemainingState]);
+  }, [timeRemainingState]);
 
   function _countingTime() {
     timer = setInterval(() => {

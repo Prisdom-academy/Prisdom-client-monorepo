@@ -11,6 +11,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { resetPasswordSchema } from '../_validationSchema';
 import PrisButton from '@prisdom/component-ui/buttons/PrisButton';
 import { useRouter } from 'next/router';
+import { useRedirectWithourEmail } from './hooks/useRedirectWithoutEmail';
 
 interface IFormInput {
   password: string;
@@ -25,6 +26,7 @@ const ResetPassword = () => {
     },
     resolver: yupResolver(resetPasswordSchema)
   });
+  useRedirectWithourEmail();
 
   const router = useRouter();
   const watchPassword = watch('password', '');
@@ -71,6 +73,7 @@ const ResetPassword = () => {
                     label={'Confirm password'}
                     placeholder="**********"
                     successMsg="Your password is matched"
+                    originalPassword={watchPassword}
                   />
                   <PasswordEvaluator password={watchPassword} />
 

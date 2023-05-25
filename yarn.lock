@@ -3927,6 +3927,7 @@ __metadata:
     "@types/node": "npm:18.15.13"
     "@types/react": "npm:18.0.38"
     "@types/react-dom": "npm:18.0.11"
+    "@types/yup": "npm:^0.32.0"
     eslint: "npm:8.39.0"
     eslint-config-next: "npm:13.3.1"
     framer-motion: "npm:^10.12.4"
@@ -3936,6 +3937,7 @@ __metadata:
     react: "npm:18.2.0"
     react-dom: "npm:18.2.0"
     typescript: "npm:5.0.4"
+    yup: "npm:^1.1.1"
   languageName: unknown
   linkType: soft
 
@@ -4795,6 +4797,15 @@ __metadata:
   version: 1.1.5
   resolution: "@types/yarnpkg__lockfile@npm:1.1.5"
   checksum: 477f20a6e4e5939f881b80dfc9387048c94b178ee51ba8bdd2f2c7ee46f3977717fe95d7dc188e553f19dc22dadce5c90eda73410320585cd187e81c2fc1392c
+  languageName: node
+  linkType: hard
+
+"@types/yup@npm:^0.32.0":
+  version: 0.32.0
+  resolution: "@types/yup@npm:0.32.0"
+  dependencies:
+    yup: "npm:*"
+  checksum: 91b1392273399b0105508a34186fe9cdbc736b94c9b71317cd8ccb15336e4d3d9a72b80b7074e5ce8bdccf51849393f747fe7e49bb6af102f910691dfd96ed7e
   languageName: node
   linkType: hard
 
@@ -13368,6 +13379,7 @@ __metadata:
   resolution: "prisdom-mono-repo@workspace:."
   dependencies:
     "@hookform/resolvers": "npm:^3.1.0"
+    "@types/yup": "npm:^0.32.0"
     "@typescript-eslint/eslint-plugin": "npm:^5.59.2"
     "@typescript-eslint/parser": "npm:^5.59.2"
     eslint-config-prettier: "npm:^8.8.0"
@@ -16762,6 +16774,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"yup@npm:*, yup@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "yup@npm:1.1.1"
+  dependencies:
+    property-expr: "npm:^2.0.5"
+    tiny-case: "npm:^1.0.3"
+    toposort: "npm:^2.0.2"
+    type-fest: "npm:^2.19.0"
+  checksum: 3060c8213c36194d80905837d85ffc08a6fff03ff6c5310240a6d7255f74cf40d67e89d6f2695191adf7d88a4f14a6c2c809a224c17738b65fd59f6d41d4d769
+  languageName: node
+  linkType: hard
+
 "yup@npm:^0.32.11":
   version: 0.32.11
   resolution: "yup@npm:0.32.11"
@@ -16774,17 +16798,5 @@ __metadata:
     property-expr: "npm:^2.0.4"
     toposort: "npm:^2.0.2"
   checksum: fcf9ef69f4a3733c3e55fe73a55a5aa8163b3a912589eb22a3a29c7989c6e12aa676c763137c82d3956451a4b3f1a0f1d14b4cc9a98ca971f0fbce9a9c5cd37a
-  languageName: node
-  linkType: hard
-
-"yup@npm:^1.1.1":
-  version: 1.1.1
-  resolution: "yup@npm:1.1.1"
-  dependencies:
-    property-expr: "npm:^2.0.5"
-    tiny-case: "npm:^1.0.3"
-    toposort: "npm:^2.0.2"
-    type-fest: "npm:^2.19.0"
-  checksum: 3060c8213c36194d80905837d85ffc08a6fff03ff6c5310240a6d7255f74cf40d67e89d6f2695191adf7d88a4f14a6c2c809a224c17738b65fd59f6d41d4d769
   languageName: node
   linkType: hard
