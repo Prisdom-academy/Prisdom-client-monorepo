@@ -9,7 +9,7 @@ import {
   Text,
   chakra
 } from '@chakra-ui/react';
-import { commonAuthStyles } from '../styles/auth';
+import { commonAuthStyles } from '../../../styles/auth/auth';
 import Footer from '@/components/layout/Footer';
 import FlexRoleNav, { SignUpRole } from '@/components/FlexRoleNav';
 import { TextInputController } from '@prisdom/component-ui/form/FormControllers/TextInputController';
@@ -24,7 +24,7 @@ import PrisButton from '@prisdom/component-ui/buttons/PrisButton';
 import { TextLayer } from '@prisdom/theme/typography/interfaces';
 import { useState } from 'react';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { signupSchema } from '../_validationSchema';
+import { signupSchema } from '../../../validations/_validationSchema';
 import { useRouter } from 'next/router';
 
 type FormInput = {

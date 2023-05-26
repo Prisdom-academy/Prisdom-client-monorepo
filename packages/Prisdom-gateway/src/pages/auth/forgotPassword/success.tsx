@@ -10,8 +10,8 @@ import TextDivider from '@/components/TextDivider';
 import PrisButton from '@prisdom/component-ui/buttons/PrisButton';
 import { useRouter } from 'next/router';
 import { useGetStore } from '@/store/StoreProvider';
-import { useRedirectWithourEmail } from './hooks/useRedirectWithoutEmail';
-import { useAutoRedirect } from './hooks/useAutoRedirect';
+import { useRedirectWithourEmail } from '../../../hooks/useRedirectWithoutEmail';
+import { useAutoRedirect } from '../../../hooks/useAutoRedirect';
 
 const Success = () => {
   let time = 20;

@@ -13,7 +13,6 @@ import { useState } from 'react';
 interface IPasswordControllerProps extends IControllerBase {
   onShowPasswordClick?(): void;
   onHidePasswordClick?(): void;
-  onChange?(): void;
   successMsg?: string;
   /**
    * Only use if you need this controller works as a confirmed password
@@ -31,7 +30,6 @@ export const PasswordInputController = (
     label,
     onShowPasswordClick,
     onHidePasswordClick,
-    onChange,
     successMsg,
     className,
     originalPassword
@@ -96,7 +94,6 @@ export const PasswordInputController = (
             errorMsg={error?.message}
             isSuccess={showSuccessState}
             successMsg={successMsg}
-            onChange={onChange}
             className={className}
             {...field}
             {...fieldState}

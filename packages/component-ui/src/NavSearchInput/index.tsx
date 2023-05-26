@@ -20,7 +20,7 @@ import HotKeys from 'react-hot-keys';
 import { TypoToken } from '@prisdom/theme/base/interfaces';
 
 // eslint-disable-next-line no-undef
-let timeoutId: NodeJS.Timeout | null = null;
+let timeoutId: NodeJS.Timeout | undefined = undefined;
 
 const DELAY_SEARCH_TIME = 2000; // 2 seconds
 

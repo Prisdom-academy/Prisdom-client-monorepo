@@ -1,7 +1,7 @@
 import PrisdomHead from '@/components/PrisdomHead';
 import { NextSafeContainer } from '@/components/layout/SafeContainer';
 import { Box, Center, Flex, Text, chakra } from '@chakra-ui/react';
-import { commonAuthStyles } from '../styles/auth';
+import { commonAuthStyles } from '../../../styles/auth/auth';
 import { TextInputController } from '@prisdom/component-ui/form/FormControllers/TextInputController';
 import { EmailIconFilled } from '@prisdom/theme/icons/SVGs/email';
 import { useForm } from 'react-hook-form';
@@ -12,7 +12,7 @@ import Footer from '@/components/layout/Footer';
 import { useGetStore } from '@/store/StoreProvider';
 import { useRouter } from 'next/router';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { sendEmailSchema } from '../_validationSchema';
+import { sendEmailSchema } from '../../../validations/_validationSchema';
 
 interface IFormInput {
   email: string;

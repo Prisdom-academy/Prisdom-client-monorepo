@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useGetStore } from '@/store/StoreProvider';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';

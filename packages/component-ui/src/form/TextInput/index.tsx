@@ -55,10 +55,10 @@ const TextInput = forwardRef(function TextInput(
     successMsg,
     fieldType = 'text',
     customIconRenderer,
-    isDirty,
-    invalid,
+    isDirty = false,
+    invalid = false,
     onChange,
-    isTouched,
+    isTouched = false,
     className,
     ...rest
   } = props;

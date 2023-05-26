@@ -2,16 +2,16 @@ import PrisdomHead from '@/components/PrisdomHead';
 import TurnbackButton from '@/components/TurnbackButton';
 import { NextSafeContainer } from '@/components/layout/SafeContainer';
 import { Box, Center, Flex, Text } from '@chakra-ui/react';
-import { commonAuthStyles } from '../styles/auth';
+import { commonAuthStyles } from '../../../styles/auth/auth';
 import Footer from '@/components/layout/Footer';
 import { PasswordInputController } from '@prisdom/component-ui/form/FormControllers/PasswordInputController';
 import { useForm } from 'react-hook-form';
 import PasswordEvaluator from '@prisdom/component-ui/form/PasswordEvaluator';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { resetPasswordSchema } from '../_validationSchema';
+import { resetPasswordSchema } from '../../../validations/_validationSchema';
 import PrisButton from '@prisdom/component-ui/buttons/PrisButton';
 import { useRouter } from 'next/router';
-import { useRedirectWithourEmail } from './hooks/useRedirectWithoutEmail';
+import { useRedirectWithourEmail } from '../../../hooks/useRedirectWithoutEmail';
 
 interface IFormInput {
   password: string;

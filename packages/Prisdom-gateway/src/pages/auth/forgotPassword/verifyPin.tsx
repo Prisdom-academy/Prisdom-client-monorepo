@@ -1,7 +1,7 @@
 import PrisdomHead from '@/components/PrisdomHead';
 import { NextSafeContainer } from '@/components/layout/SafeContainer';
 import { Box, Center, Flex, Text } from '@chakra-ui/react';
-import { commonAuthStyles } from '../styles/auth';
+import { commonAuthStyles } from '../../../styles/auth/auth';
 import TurnbackButton from '@/components/TurnbackButton';
 import Footer from '@/components/layout/Footer';
 import { TextLayer } from '@prisdom/theme/typography/interfaces';
@@ -14,9 +14,9 @@ import { config } from '@/config';
 import PrisButton from '@prisdom/component-ui/buttons/PrisButton';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { pinValidationSchema } from '../_validationSchema';
+import { pinValidationSchema } from '../../../validations/_validationSchema';
 import { PinInputController } from '@prisdom/component-ui/form/FormControllers/PinInputController';
-import { useRedirectWithourEmail } from './hooks/useRedirectWithoutEmail';
+import { useRedirectWithourEmail } from '../../../hooks/useRedirectWithoutEmail';
 
 interface IFormInput {
   pin: string;
