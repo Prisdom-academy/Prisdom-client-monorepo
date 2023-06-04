@@ -17,6 +17,8 @@
     "@types/react": "18.0.38",
     "@types/react-dom": "18.0.11",
     "@types/yup": "^0.32.0",
+    "@types/inversify": "^2.0.33",
+    "inversify": "^6.0.1",
     "eslint": "8.39.0",
     "eslint-config-next": "13.3.1",
     "framer-motion": "^10.12.4",

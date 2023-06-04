@@ -10,7 +10,8 @@ module.exports = function (config, env) {
         /* transpile (converting to es5) code in src/ and shared component library */
         path.resolve('src'),
         path.resolve('../component-ui'),
-        path.resolve('../theme')
+        path.resolve('../theme'),
+        path.resolve('../services')
       ])
     )(config, env)
   );

@@ -1,13 +1,19 @@
+import 'reflect-metadata';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from 'reportWebVitals';
-import container from 'store-sdk/ioc-container/ioc';
-import { IOCProvider } from 'store-sdk/ioc-container/ioc.context';
 import './i18n/i18n';
 import { ChakraProvider } from '@chakra-ui/react';
 import { chakraTheme } from '@prisdom/theme/chakraTheme';
 import { RouterProvider } from 'react-router-dom';
 import router from 'router/routes/router';
+import container from '@prisdom/services/src/ioc';
+import { initServices } from '@prisdom/services/src/initService';
+import { init } from 'store-sdk/initService';
+import { IOCProvider } from 'store-sdk/injection.hook';
+
+initServices();
+init();
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

@@ -1,7 +1,7 @@
 import { Fragment, PropsWithChildren } from 'react';
-import { useInjection } from 'store-sdk/ioc-container/ioc.context';
-import { Symbols } from 'store-sdk/ioc-container/symbols';
 import { IAuthStore } from '../interfaces';
+import { Symbols } from '@prisdom/services/src/symbols';
+import { useInjection } from 'store-sdk/injection.hook';
 
 interface IAuthProps extends PropsWithChildren<any> {}
 

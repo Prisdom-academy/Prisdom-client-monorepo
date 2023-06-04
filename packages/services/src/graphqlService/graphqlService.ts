@@ -1,15 +1,14 @@
-import { config } from 'config/config.dev';
 import { GraphQLClient, RequestDocument } from 'graphql-request';
 import { GraphQLError } from 'graphql-request/dist/types';
 import { inject, injectable } from 'inversify';
-import { TOKEN_KEY } from 'store-sdk/authStore/authStore';
-import { IAuthData } from 'store-sdk/authStore/interfaces';
-import type {
-  ErrorHandler,
-  IErrorHandlingService
-} from 'store-sdk/errorHandlingService/interfaces';
-import { Symbols } from 'store-sdk/ioc-container/symbols';
-import type { IStorageService } from 'store-sdk/storageService/interfaces';
+import { Symbols } from '../symbols';
+import { config } from '../config/config.dev';
+import * as errorInterfaces from '../interfaces/errorInterfaces';
+import * as interfaces from '../storageService/interfaces';
+import {
+  IAuthData,
+  STORAGE_TOKEN_KEY
+} from '../interfaces/authInterfaces';
 import type {
   ICachingService,
   IGraphqlService,
@@ -23,25 +22,32 @@ export class GraphqlService implements IGraphqlService {
     headers: {}
   });
 
-  @inject(Symbols.IErrorHandlingService)
-  private errorService!: IErrorHandlingService;
+  private errorService?: errorInterfaces.IErrorHandlingService;
 
   @inject(Symbols.ICachingService)
   private cachingService!: ICachingService;
 
   @inject(Symbols.IStorageService)
-  private storageService!: IStorageService;
+  private storageService!: interfaces.IStorageService;
+
+  constructor(
+    customErrorHandler?: errorInterfaces.IErrorHandlingService
+  ) {
+    this.errorService = customErrorHandler;
+  }
 
   async sendRequest<T, U extends VariableType = undefined>(
     gqlString: RequestDocument,
     variables?: U,
-    errorHandler?: ErrorHandler
+    errorHandler?: errorInterfaces.ErrorHandler
   ) {
     const authData = this.getToken();
     if (!errorHandler) {
-      errorHandler = this.errorService.defaultHandling.bind(
-        this.errorService
-      );
+      if (this.errorService) {
+        errorHandler = this.errorService.defaultHandling.bind(
+          this.errorService
+        );
+      }
     }
     if (authData?.token) {
       this.client.setHeader(
@@ -52,21 +58,23 @@ export class GraphqlService implements IGraphqlService {
     try {
       return await this.client.request<T>(gqlString, variables);
     } catch (error) {
-      errorHandler(error as GraphQLError[]);
+      errorHandler?.(error as GraphQLError[]);
     }
   }
 
   async sendRequestWithCache<T, U extends VariableType = undefined>(
     gqlString: RequestDocument,
     variables?: U,
-    errorHandler?: ErrorHandler
+    errorHandler?: errorInterfaces.ErrorHandler
   ) {
     const authData = this.getToken();
 
     if (!errorHandler) {
-      errorHandler = this.errorService.defaultHandling.bind(
-        this.errorService
-      );
+      if (this.errorService) {
+        errorHandler = this.errorService.defaultHandling.bind(
+          this.errorService
+        );
+      }
     }
     if (authData?.token) {
       this.client.setHeader(
@@ -90,11 +98,11 @@ export class GraphqlService implements IGraphqlService {
       }
       return data;
     } catch (error) {
-      errorHandler(error as GraphQLError[]);
+      errorHandler?.(error as GraphQLError[]);
     }
   }
 
   private getToken() {
-    return this.storageService.getItem<IAuthData>(TOKEN_KEY);
+    return this.storageService.getItem<IAuthData>(STORAGE_TOKEN_KEY);
   }
 }

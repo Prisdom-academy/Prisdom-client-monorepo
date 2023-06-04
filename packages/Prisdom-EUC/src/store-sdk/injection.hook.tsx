@@ -1,8 +1,10 @@
+import { Symbols } from '@prisdom/services/src/symbols';
 import { Container } from 'inversify';
 import { createContext, PropsWithChildren, useContext } from 'react';
-import { Symbols } from './symbols';
 
-const InversifyContext = createContext<{ container: Container | null }>({
+const InversifyContext = createContext<{
+  container: Container | null;
+}>({
   container: null
 });
 

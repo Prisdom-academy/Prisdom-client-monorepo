@@ -1,8 +1,8 @@
 import { GraphQLError } from 'graphql-request/dist/types';
 import { inject, injectable } from 'inversify';
-import { Symbols } from 'store-sdk/ioc-container/symbols';
 import type { INotificationModalStore } from 'store-sdk/modalServices/interfaces';
 import { IErrorHandlingService } from './interfaces';
+import { Symbols } from '@prisdom/services/src/symbols';
 
 @injectable()
 export class ErrorHandlingService implements IErrorHandlingService {

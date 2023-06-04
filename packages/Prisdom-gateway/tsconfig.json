@@ -21,7 +21,8 @@
     "paths": {
       "@/*": ["./src/*"],
       "@prisdom/theme/*": ["../theme/*"],
-      "@prisdom/component-ui/*": ["../component-ui/src/*"]
+      "@prisdom/component-ui/*": ["../component-ui/src/*"],
+      "@prisdom/services/*": ["../services/src/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

@@ -6,8 +6,6 @@ import {
   useEffect,
   useState
 } from 'react';
-import { useInjection } from 'store-sdk/ioc-container/ioc.context';
-import { Symbols } from 'store-sdk/ioc-container/symbols';
 import {
   INotificationModalStore,
   INoticModalData,
@@ -16,6 +14,8 @@ import {
 } from 'store-sdk/modalServices/interfaces';
 import { CommonModal } from './CommonModal';
 import { NotificationModal } from './NotificationModal';
+import { Symbols } from '@prisdom/services/src/symbols';
+import { useInjection } from 'store-sdk/injection.hook';
 
 interface INotificationContainer extends PropsWithChildren<any> {}
 

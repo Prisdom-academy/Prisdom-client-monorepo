@@ -1,16 +1,16 @@
 import { config } from 'config/config.dev';
 import { inject, injectable } from 'inversify';
 import { BehaviorSubject } from 'rxjs';
-import type { IGraphqlService } from 'store-sdk/graphqlService/interfaces';
-import { Symbols } from 'store-sdk/ioc-container/symbols';
-import type { IStorageService } from 'store-sdk/storageService/interfaces';
 import { signInGql } from './auth.graphql';
+import { IAuthStore } from './interfaces';
+import { Symbols } from '@prisdom/services/src/symbols';
 import {
   ClientSignInResponse,
   ClientUserSigninInput,
-  IAuthData,
-  IAuthStore
-} from './interfaces';
+  IAuthData
+} from '@prisdom/services/src/interfaces/authInterfaces';
+import type { IGraphqlService } from '@prisdom/services/src/graphqlService/interfaces';
+import type { IStorageService } from '@prisdom/services/src/storageService/interfaces';
 
 export const TOKEN_KEY = 'userToken';
 @injectable()
@@ -18,8 +18,8 @@ export class AuthStore implements IAuthStore {
   @inject(Symbols.IStorageService)
   storageService!: IStorageService;
 
-  @inject(Symbols.IGraphqlService)
-  graphQLService!: IGraphqlService;
+  @inject(Symbols.IAppGraphqlService)
+  appGraphqlService!: IGraphqlService;
 
   private tokenLive = config.tokenLive;
 
@@ -31,7 +31,7 @@ export class AuthStore implements IAuthStore {
   loginData$ = this.loginDataSubject.asObservable();
 
   async login(input: ClientUserSigninInput) {
-    const data = await this.graphQLService.sendRequest<
+    const data = await this.appGraphqlService.sendRequest<
       ClientSignInResponse,
       ClientUserSigninInput
     >(signInGql, { ...input });

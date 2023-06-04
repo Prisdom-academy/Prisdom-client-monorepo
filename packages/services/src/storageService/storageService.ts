@@ -29,7 +29,7 @@ export class StorageService implements IStorageService {
     storage.removeItem(key);
   }
 
-  private getStorage(storageType: 'session' | 'local' = 'session') {
+  private getStorage(storageType: StorageType = 'session') {
     if (storageType === 'session') {
       return sessionStorage;
     } else {
