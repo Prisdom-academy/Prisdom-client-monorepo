@@ -7,20 +7,22 @@ import successImg from '@/images/reset-success.png';
 import { TextLayer } from '@prisdom/theme/typography/interfaces';
 import { TypoToken } from '@prisdom/theme/base/interfaces';
 import TextDivider from '@/components/TextDivider';
-import PrisButton from '@prisdom/component-ui/buttons/PrisButton';
-import { useRouter } from 'next/router';
 import { useGetStore } from '@/store/StoreProvider';
 import { useAutoRedirect } from '../../../hooks/useAutoRedirect';
+import { useRedirectToApp } from '@/hooks/useRedirectWithoutEmail';
+import PrisButton from '@prisdom/component-ui/buttons/PrisButton';
 
 const Success = () => {
   let time = 20;
-  const router = useRouter();
   const { authStore } = useGetStore();
-  const { autoMoveTime } = useAutoRedirect(_returnSignin, time);
+  const { autoMoveTime } = useAutoRedirect(_returnApp, time);
+  const { navigate } = useRedirectToApp(
+    authStore.authToken,
+    authStore.remainingExpTime
+  );
 
-  function _returnSignin() {
-    // TODO: need to redirect to app instead of /about
-    router.push('/about');
+  function _returnApp() {
+    navigate();
     authStore.removeCurrentEmail();
   }
   return (
@@ -53,7 +55,7 @@ const Success = () => {
               </Text>
             </Flex>
             <TextDivider title="Or" my="8" />
-            <PrisButton w="100%" h="3rem" onClick={_returnSignin}>
+            <PrisButton w="100%" h="3rem" onClick={_returnApp}>
               Learn now
             </PrisButton>
           </Center>

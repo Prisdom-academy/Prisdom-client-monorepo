@@ -1,7 +1,15 @@
 import { registerServiceSingleton } from '@prisdom/services/ioc';
 import { Symbols } from '@prisdom/services/symbols';
-import { AuthStore } from './store/auth';
+import { GatewayAuthStore } from './store/auth';
+import { ErrorHanldingService } from './store/gatewayGraphqlService/errorHandlingService';
 
-export function initGatewaySvc() {
-  registerServiceSingleton(Symbols.IGatewayAuthStore, AuthStore);
+export function initGatewayService() {
+  registerServiceSingleton(
+    Symbols.IErrorHandlingService,
+    ErrorHanldingService
+  );
+  registerServiceSingleton(
+    Symbols.IGatewayAuthStore,
+    GatewayAuthStore
+  );
 }

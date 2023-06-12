@@ -8,7 +8,19 @@ export function registerServiceSingleton<IStore>(
   symbols: Symbols,
   storeImpls: any
 ) {
-  container.bind<IStore>(symbols).to(storeImpls).inSingletonScope();
+  if (!container.isBound(symbols)) {
+    container.bind<IStore>(symbols).to(storeImpls).inSingletonScope();
+  }
+}
+
+export function serviceProvider<T>(serviceIdentifier: Symbols) {
+  const service = container.get<T>(serviceIdentifier);
+
+  if (service) {
+    return service;
+  } else {
+    throw new Error('Service is not yet registered');
+  }
 }
 
 export default container;

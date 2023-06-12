@@ -16,10 +16,10 @@ export const TOKEN_KEY = 'userToken';
 @injectable()
 export class AuthStore implements IAuthStore {
   @inject(Symbols.IStorageService)
-  storageService!: IStorageService;
+  private storageService!: IStorageService;
 
-  @inject(Symbols.IAppGraphqlService)
-  appGraphqlService!: IGraphqlService;
+  @inject(Symbols.IGraphqlService)
+  private gqlService!: IGraphqlService;
 
   private tokenLive = config.tokenLive;
 
@@ -31,7 +31,7 @@ export class AuthStore implements IAuthStore {
   loginData$ = this.loginDataSubject.asObservable();
 
   async login(input: ClientUserSigninInput) {
-    const data = await this.appGraphqlService.sendRequest<
+    const data = await this.gqlService.sendRequest<
       ClientSignInResponse,
       ClientUserSigninInput
     >(signInGql, { ...input });

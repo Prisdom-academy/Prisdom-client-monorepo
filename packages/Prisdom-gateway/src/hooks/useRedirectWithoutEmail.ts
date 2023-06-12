@@ -16,3 +16,28 @@ export function useRedirectWithourEmail(location = './verifyEmail') {
 
   return { email };
 }
+
+export function useRedirectToApp(
+  authToken: string,
+  remainingExpTime: number
+) {
+  const appLink = process.env.NEXT_PUBLIC_APP_URL || '#';
+  if (!appLink) {
+    throw new Error('App url is invalid');
+  }
+
+  const router = useRouter();
+  let uri = `http://${appLink}`;
+
+  if (authToken && remainingExpTime) {
+    uri = `http://${appLink}/?token=${authToken}&remainExpTime=${remainingExpTime}`;
+  }
+  function _navigate() {
+    router.push(uri);
+  }
+
+  return {
+    navigate: _navigate,
+    uri
+  };
+}

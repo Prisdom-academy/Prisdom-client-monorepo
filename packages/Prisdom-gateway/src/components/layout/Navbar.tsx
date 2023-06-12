@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Box, Divider, Flex, Text } from '@chakra-ui/react';
 import { styles } from './styles';
 import Image from 'next/image';
@@ -12,12 +13,24 @@ import { TypoToken } from '@prisdom/theme/base/interfaces';
 import Link from 'next/link';
 import TextButton from '@prisdom/component-ui/buttons/TextButton';
 import PrisButton from '@prisdom/component-ui/buttons/PrisButton';
+import { useGetStore } from '@/store/StoreProvider';
+import { useEffect } from 'react';
+import { observer } from 'mobx-react-lite';
+import { useRedirectToApp } from '@/hooks/useRedirectWithoutEmail';
 
 interface NavbarProps {
   currentLocaltion: string;
 }
 
 const NavBar = (props: NavbarProps) => {
+  const { authStore } = useGetStore();
+  useEffect(() => {
+    authStore.autoLogin();
+  }, []);
+  const { uri } = useRedirectToApp(
+    authStore.authToken,
+    authStore.remainingExpTime
+  );
   const { currentLocaltion } = props;
   const navLinkItems = [
     {
@@ -84,24 +97,37 @@ const NavBar = (props: NavbarProps) => {
         </Flex>
         <Divider variant={'v2'} h="1rem" orientation="vertical" />
         <Flex>
-          {!(_isOnSigninPage || _isOnSignupPage) && (
-            <TextButton variant={'secondary'} ml="3">
-              <Link href="/auth/signin">Sign in</Link>
-            </TextButton>
+          {!authStore.isAuth ? (
+            <Flex>
+              {!(_isOnSigninPage || _isOnSignupPage) && (
+                <TextButton variant={'secondary'} ml="3">
+                  <Link href="/auth/signin">Sign in</Link>
+                </TextButton>
+              )}
+              <PrisButton ml="3">
+                <Link
+                  href={
+                    !_isOnSignupPage ? '/auth/signup' : '/auth/signin'
+                  }
+                >
+                  {!_isOnSignupPage ? 'Sign Up' : 'Sign in'}
+                </Link>
+              </PrisButton>
+            </Flex>
+          ) : (
+            <Flex>
+              <TextButton variant={'secondary'} ml="3">
+                <Link href="/#">Upgrade</Link>
+              </TextButton>
+              <PrisButton ml="3">
+                <Link href={uri}>Go to app</Link>
+              </PrisButton>
+            </Flex>
           )}
-          <PrisButton ml="3">
-            <Link
-              href={
-                !_isOnSignupPage ? '/auth/signup' : '/auth/signin'
-              }
-            >
-              {!_isOnSignupPage ? 'Sign Up' : 'Sign in'}
-            </Link>
-          </PrisButton>
         </Flex>
       </Flex>
     </Flex>
   );
 };
 
-export default NavBar;
+export default observer(NavBar);

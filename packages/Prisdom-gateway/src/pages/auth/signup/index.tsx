@@ -25,9 +25,9 @@ import { TextLayer } from '@prisdom/theme/typography/interfaces';
 import { useState } from 'react';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { signupSchema } from '../../../validations/_validationSchema';
-import { useRouter } from 'next/router';
+import { useSignupPageTransport } from '@/hooks/auth/useSignupPage';
 
-type FormInput = {
+export type SignupFormInput = {
   name: string;
   email: string;
   password: string;
@@ -36,7 +36,7 @@ type FormInput = {
 
 const Signup = () => {
   const { control, resetField, watch, handleSubmit } =
-    useForm<FormInput>({
+    useForm<SignupFormInput>({
       defaultValues: {
         name: '',
         email: '',
@@ -48,15 +48,14 @@ const Signup = () => {
 
   const [agree, setAgree] = useState<boolean | undefined>();
   const passwordVal = watch('password');
+
+  let assignedRole: SignUpRole = 'LEARNER';
   function _onRoleChange(role: SignUpRole) {
-    console.log(role);
+    assignedRole = role;
   }
 
-  const router = useRouter();
-  function _onSubmit(data: FormInput) {
-    console.log(data);
-    router.push('/auth/signup/success');
-  }
+  const { onSubmit, isLoading } =
+    useSignupPageTransport(assignedRole);
 
   function _renderSignupForm() {
     return (
@@ -64,7 +63,7 @@ const Signup = () => {
         bgColor={ColorToken.global_dark_level_transparent_32}
         p="6"
         borderRadius={'.5rem'}
-        onSubmit={handleSubmit(_onSubmit)}
+        onSubmit={handleSubmit(onSubmit)}
       >
         <TextInputController
           control={control}
@@ -119,6 +118,7 @@ const Signup = () => {
             w="100%"
             size={'lg'}
             isDisabled={!agree}
+            isLoading={isLoading}
           >
             Create account
           </PrisButton>

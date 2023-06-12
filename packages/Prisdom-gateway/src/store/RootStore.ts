@@ -1,14 +1,16 @@
-import { AuthStore, IAuthHydriatedData } from './auth/index';
+import { serviceProvider } from '@prisdom/services/ioc';
+import { GatewayAuthStore, IAuthHydriatedData } from './auth/index';
 import { IHydatable } from './interfaces';
+import { Symbols } from '@prisdom/services/symbols';
 export interface RootStoreHydrateData {
   authStore: IAuthHydriatedData;
 }
 
 export class RootStore implements IHydatable<RootStoreHydrateData> {
-  public authStore: AuthStore;
+  public authStore: GatewayAuthStore;
 
   constructor() {
-    this.authStore = new AuthStore();
+    this.authStore = serviceProvider(Symbols.IGatewayAuthStore);
   }
 
   hydrate(data: RootStoreHydrateData): void {

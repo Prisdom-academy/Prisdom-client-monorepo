@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Center, Flex, FlexProps, Text } from '@chakra-ui/react';
 import { stylesGenerator } from './styles';
 import { TextLayer } from '@prisdom/theme/typography/interfaces';
@@ -11,14 +12,14 @@ interface IFlexRoleNavProps extends FlexProps {
   onRoleChange?(role: SignUpRole): void;
 }
 
-export type SignUpRole = 'learner' | 'instructor';
+export type SignUpRole = 'LEARNER' | 'INSTRUCTOR';
 
 const FlexRoleNav = (props: IFlexRoleNavProps) => {
-  const [role, setRole] = useState<SignUpRole>('learner');
+  const [role, setRole] = useState<SignUpRole>('LEARNER');
   const { onRoleChange, ...rest } = props;
 
   function _switchRole() {
-    setRole(role === 'learner' ? 'instructor' : 'learner');
+    setRole(role === 'LEARNER' ? 'INSTRUCTOR' : 'LEARNER');
   }
 
   useEffect(() => {
@@ -33,7 +34,7 @@ const FlexRoleNav = (props: IFlexRoleNavProps) => {
         <Text
           layerStyle={TextLayer.smallBoldNormal}
           color={
-            role === 'learner'
+            role === 'LEARNER'
               ? ColorToken.primary_base
               : TypoToken.type_link_default
           }
@@ -45,7 +46,7 @@ const FlexRoleNav = (props: IFlexRoleNavProps) => {
         <Text
           layerStyle={TextLayer.smallBoldNormal}
           color={
-            role === 'instructor'
+            role === 'INSTRUCTOR'
               ? ColorToken.primary_base
               : TypoToken.type_link_default
           }

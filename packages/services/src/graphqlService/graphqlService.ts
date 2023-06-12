@@ -2,7 +2,6 @@ import { GraphQLClient, RequestDocument } from 'graphql-request';
 import { GraphQLError } from 'graphql-request/dist/types';
 import { inject, injectable } from 'inversify';
 import { Symbols } from '../symbols';
-import { config } from '../config/config.dev';
 import * as errorInterfaces from '../interfaces/errorInterfaces';
 import * as interfaces from '../storageService/interfaces';
 import {
@@ -17,12 +16,17 @@ import type {
 
 @injectable()
 export class GraphqlService implements IGraphqlService {
-  private endpoint = config.gqlEndpoint;
-  private readonly client = new GraphQLClient(this.endpoint, {
-    headers: {}
-  });
+  private endpoint =
+    process.env.NEXT_PUBLIC_BACKEND_HOST || 'localhost:3001';
+  private readonly client = new GraphQLClient(
+    `http://${this.endpoint}/graphql`,
+    {
+      headers: {}
+    }
+  );
 
-  private errorService?: errorInterfaces.IErrorHandlingService;
+  @inject(Symbols.IErrorHandlingService)
+  private errorHandlingService!: errorInterfaces.IErrorHandlingService;
 
   @inject(Symbols.ICachingService)
   private cachingService!: ICachingService;
@@ -30,25 +34,15 @@ export class GraphqlService implements IGraphqlService {
   @inject(Symbols.IStorageService)
   private storageService!: interfaces.IStorageService;
 
-  constructor(
-    customErrorHandler?: errorInterfaces.IErrorHandlingService
-  ) {
-    this.errorService = customErrorHandler;
-  }
-
   async sendRequest<T, U extends VariableType = undefined>(
     gqlString: RequestDocument,
     variables?: U,
-    errorHandler?: errorInterfaces.ErrorHandler
+    errorHandlerKey: string = errorInterfaces.InitialHandler.DEFAULT
   ) {
     const authData = this.getToken();
-    if (!errorHandler) {
-      if (this.errorService) {
-        errorHandler = this.errorService.defaultHandling.bind(
-          this.errorService
-        );
-      }
-    }
+    const errorHandler =
+      this.errorHandlingService.getHandler(errorHandlerKey);
+
     if (authData?.token) {
       this.client.setHeader(
         'authorization',
@@ -59,23 +53,20 @@ export class GraphqlService implements IGraphqlService {
       return await this.client.request<T>(gqlString, variables);
     } catch (error) {
       errorHandler?.(error as GraphQLError[]);
+      return null;
     }
   }
 
   async sendRequestWithCache<T, U extends VariableType = undefined>(
     gqlString: RequestDocument,
     variables?: U,
-    errorHandler?: errorInterfaces.ErrorHandler
+    errorHandlerKey: string = errorInterfaces.InitialHandler.DEFAULT
   ) {
     const authData = this.getToken();
 
-    if (!errorHandler) {
-      if (this.errorService) {
-        errorHandler = this.errorService.defaultHandling.bind(
-          this.errorService
-        );
-      }
-    }
+    const errorHandler =
+      this.errorHandlingService.getHandler(errorHandlerKey);
+
     if (authData?.token) {
       this.client.setHeader(
         'authorization',
@@ -99,6 +90,7 @@ export class GraphqlService implements IGraphqlService {
       return data;
     } catch (error) {
       errorHandler?.(error as GraphQLError[]);
+      return null;
     }
   }
 

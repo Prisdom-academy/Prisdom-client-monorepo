@@ -1,11 +1,11 @@
-import { defineStyleConfig } from '@chakra-ui/react';
+import { defineStyle, defineStyleConfig } from '@chakra-ui/react';
 import {
   ButtonTokenColor,
   ColorToken
 } from '@prisdom/theme/base/interfaces';
 import { TextLayer } from '@prisdom/theme/typography/interfaces';
 
-export const fitButtonReusableStyle = {
+export const fitButtonReusableStyle = defineStyle({
   color: 'white',
   borderRadius: '.4rem',
   fontFamily: 'content',
@@ -13,8 +13,9 @@ export const fitButtonReusableStyle = {
   alignItems: 'center',
   justifyContent: 'center',
   transition: 'all .3s',
-  minW: '100px'
-};
+  minW: '100px',
+  pos: 'relative'
+});
 
 export const PrisButtonStyle = defineStyleConfig({
   baseStyle: {
@@ -32,9 +33,7 @@ export const PrisButtonStyle = defineStyleConfig({
         bg: ButtonTokenColor.cpn_btn_primary_background_hover
       },
       _loading: {
-        bg:
-          `${ButtonTokenColor.cpn_btn_primary_background_loading 
-          } !important`,
+        bg: `${ButtonTokenColor.cpn_btn_primary_background_loading} !important`,
         color: 'white !important',
         fill: 'white !important'
       },
@@ -60,12 +59,8 @@ export const PrisButtonStyle = defineStyleConfig({
         bg: ButtonTokenColor.cpn_btn_neutral_background_hover
       },
       _loading: {
-        bg:
-          `${ButtonTokenColor.cpn_btn_neutral_background_loading 
-          } !important`,
-        fill:
-          `${ButtonTokenColor.cpn_btn_neutral_background_loading 
-          } !important`
+        bg: `${ButtonTokenColor.cpn_btn_neutral_background_loading} !important`,
+        fill: `${ButtonTokenColor.cpn_btn_neutral_background_loading} !important`
       },
       _focus: {
         bg: ButtonTokenColor.cpn_btn_neutral_background_hover,

@@ -22,7 +22,7 @@ export const stylesGenerator = (role: SignUpRole) =>
         borderRadius: '.3rem',
         transition: 'all .3s',
         transform:
-          role === 'learner' ? 'translateX(0)' : 'translateX(97%)'
+          role === 'LEARNER' ? 'translateX(0)' : 'translateX(97%)'
       }
     },
 

@@ -8,6 +8,9 @@ export enum Symbols {
   ICommonModalStore = 'ICommonModalStore',
   ICachingService = 'ICachingService',
   IStorageService = 'IStorageService',
+  IClientAuthService = 'IClientAuthService',
 
-  IGatewayAuthStore = 'IGatewayAuthStore'
+  IGatewayAuthStore = 'IGatewayAuthStore',
+  IGatewayGraphqlService = 'IGatewayGraphqlService',
+  IGatewayRootStore = 'IGatewayRootStore'
 }
